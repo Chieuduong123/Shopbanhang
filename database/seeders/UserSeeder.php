@@ -16,12 +16,13 @@ class UserSeeder extends Seeder
          $name = [
             "duong",
             "hai",
+            "admin"
         ];
         $email = [
-            "duong@gmail.com", "hai@gmail.com"
+            "duong@gmail.com", "hai@gmail.com", "admin@gmail.com"
         ];
-        $password = [bcrypt('duong123'), bcrypt('hai123')];
-        $type = [1,1];
+        $password = [bcrypt('duong123'), bcrypt('hai123'), bcrypt('admin123')];
+        $type = [1,1,1];
         for ($i = 0; $i < count($name); $i++) {
             \DB::table('users')->insert([
                 'id' => $i +1,
