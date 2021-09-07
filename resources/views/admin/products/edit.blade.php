@@ -251,6 +251,13 @@
                                                     style="border: 1px solid rgb(187, 179, 179)">
                                                 <img src="{{ asset('img/'.$product->img) }}" width=" 300px">
                                             </div>
+
+                                            <div class="form-group">
+                                                <label for="gia">Số lượng</label>
+                                                <input type="text " name="count" value="{{ $product->count }}"
+                                                    class=" form-control" id="gia">
+                                            </div>
+
                                             <div class="form-group">
                                                 <label for="mota">Mô tả</label>
                                                 <input type="text " name="description"

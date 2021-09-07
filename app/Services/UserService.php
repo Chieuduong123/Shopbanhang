@@ -3,7 +3,7 @@
 namespace App\Services;
 
 
-use App\Repositories\Admin\UserRepository;
+use App\Repositories\UserRepository;
 
 
 class UserService

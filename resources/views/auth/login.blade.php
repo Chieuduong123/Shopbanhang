@@ -30,10 +30,7 @@
                         <label for="password" class="label">Password</label>
                         <input type="password" class="form-control" name="password" placeholder="Mật Khẩu">
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Nhớ tài khoản</label>
-                    </div>
+
                     <?php //Hiển thị thông báo lỗi?>
                     @if ( Session::has('error') )
                     <div class="alert alert-danger alert-dismissible" role="alert">

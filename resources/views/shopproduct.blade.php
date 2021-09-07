@@ -232,20 +232,24 @@
                                             <a href="#"><img src="{{asset('icon/compare.png')}}" alt=""> </a>
                                         </li>
                                         <li>
-                                            <a href="#"><img src="{{asset('icon/search.png')}}" alt=""></a>
+                                            <a href="{{ route('detail', $product->id) }}">
+                                                <img src=" {{asset('icon/search.png')}}" alt="">
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6>{{$product->name}}</h6>
-                                    <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
-                                    <div class="rating">
+                                    <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart" role="button">+
+                                        Thêm vào giỏ
+                                        hàng</a>
+                                    <!-- <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
-                                    </div>
+                                    </div> -->
                                     <h5>{{$product->price}}</h5>
                                     <div class="product__color__select">
                                         <label for="pc-4">

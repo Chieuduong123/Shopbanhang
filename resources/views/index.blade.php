@@ -222,10 +222,10 @@
                 </div>
             </div>
             <div class="row product__filter ">
+                @foreach($products as $product)
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals ">
                     <div class="product__item ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg="{{asset('/mlb-boston-red-sox-nam-nu.jpg')}} ">
+                        <div class="product__item__pic set-bg " data-setbg="{{asset('img/'.$product->img)}}">
                             <span class="label ">New</span>
                             <ul class="product__hover ">
                                 <li>
@@ -241,7 +241,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text ">
-                            <h6>MLB BOSTON RED SOX BIG BALL CHUNKY P 3D</h6>
+                            <h6>{{$product->name}}</h6>
                             <a href="# " class="add-cart ">+ Thêm vào giỏ hàng</a>
                             <div class="rating ">
                                 <i class="fa fa-star-o "></i>
@@ -250,7 +250,7 @@
                                 <i class="fa fa-star-o "></i>
                                 <i class="fa fa-star-o "></i>
                             </div>
-                            <h5>1.100.000đ</h5>
+                            <h5>{{$product->price}}</h5>
                             <div class="product__color__select ">
                                 <label for="pc-1 ">
                                     <input type="radio " id="pc-1 ">
@@ -265,7 +265,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales ">
+                @endforeach
+                <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales ">
                     <div class="product__item ">
                         <div class="product__item__pic set-bg "
                             data-setbg=".{{asset('img/785650c759f88845cf73cb5725fb177c.jpg ')}}">
@@ -562,7 +563,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
     <!-- Product Section End -->
 

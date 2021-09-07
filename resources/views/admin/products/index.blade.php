@@ -25,6 +25,7 @@
     <style type="text/css">
     * {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        word-wrap: break-word !important;
     }
     </style>
 </head>
@@ -95,27 +96,33 @@
                             <section id="unseen">
 
 
-                                <table class="table table-bordered table-striped table-condensed">
+                                <table class=" table table-bordered table-striped
+                                    table-condensed">
                                     <thead>
                                         <tr>
                                             <th>Mã</th>
                                             <th>Tên sản phẩm</th>
                                             <th class="numeric">Giá bán</th>
                                             <th class="numeric">Số lượng</th>
-                                            <th>Loại</th>
+                                            <th>Mô tả</th>
                                             <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     @foreach($products as $product)
                                     <tbody>
-                                        <tr>
+                                        <tr style="word-wrap: break-word;">
                                             <td>{{$product->id}}</td>
-                                            <td>{{$product->name}}</td>
-                                            <td class="numeric">{{$product->price}}</td>
+                                            <td style="width: 100px;">
+                                                <p style=" width: 300px;">{{$product->name}}</p>
+                                            </td>
+                                            <td class=" numeric">{{$product->price}}</td>
                                             <td class="numeric">{{$product->count}}</td>
-                                            <td>{{$product->description}}</td>
+                                            <td style="word-wrap: break-word;">
+                                                <p style=" width: 300px;">
+                                                    {{$product->description}}</p>
+                                            </td>
                                             <td>
-                                                <form action="{{ route('products.destroy',$product->id) }}"
+                                                <form action=" {{ route('products.destroy',$product->id) }}"
                                                     method="POST">
 
 
