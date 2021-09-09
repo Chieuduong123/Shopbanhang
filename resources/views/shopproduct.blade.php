@@ -63,7 +63,8 @@
                             <li><a href="#">Trang </a>
                                 <ul class="dropdown">
                                     <li><a href="./about.html">Thông tin</a></li>
-                                    <li><a href="./shopping-cart.html">Giỏ hàng</a></li>
+                                    <li class="fa fa-shopping-cart" aria-hidden="true"><a
+                                            href="./shopping-cart.html">Giỏ hàng</a></li>
                                     <li><a href="./checkout.html">Kiểm tra</a></li>
                                 </ul>
                             </li>
@@ -76,8 +77,9 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="{{asset('icon/search.png')}}" alt=""></a>
                         <a href="#"><img src="{{asset('icon/heart.png')}}" alt=""></a>
-                        <a href="#"><img src="{{asset('icon/cart.png')}}" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
+                        <a href="{{route('cart')}}"> <img src="{{asset('icon/cart.png')}}" alt="">
+                            <span>{{session()->get( 'countCart' )}}
+                            </span></a>
                     </div>
                 </div>
             </div>
@@ -242,7 +244,8 @@
                                     <h6>{{$product->name}}</h6>
                                     <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart" role="button">+
                                         Thêm vào giỏ
-                                        hàng</a>
+                                        hàng
+                                    </a>
                                     <!-- <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>

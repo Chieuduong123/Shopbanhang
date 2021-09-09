@@ -1,87 +1,123 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+    <title>Sign Up</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Đăng Ký</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
-    </script>
-    <link href="{{asset('css.css')}}" rel="stylesheet" type="text/css">
-    <script src="{{asset('/js/login.js')}}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{asset('css/css.css')}}">
+
 </head>
 
 <body>
-    <div class="container-fluid bg">
-        <div class="row justify-content-center">
-            <div style="margin-top: 3px; margin: 3px; padding: 15px;" class="col-md-4 col-sm-7 col-xs-10 row-container">
-                <form role="form" method="POST" action="{{ url('/register') }}">
-                    {!! csrf_field() !!}
-                    <h1>Đăng Ký</h1>
-                    <div class="form-group">
-                        <label for="ho">Username</label>
-                        <input type="text" name='name' class="form-control" id="tennd" placeholder="Tên người dùng">
-                        <p class="emailError"></p>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <div class="wrap d-md-flex">
+                        <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                            <div class="text w-100">
+                                <h2>Welcome To My Shop</h2>
+                                <p>You have already account?</p>
+                                <a href="login" class="btn btn-white btn-outline-white">Sign In</a>
+                            </div>
+                        </div>
+                        <div class="login-wrap p-4 p-lg-5">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <h3 class="mb-4">Sign Up</h3>
+                                </div>
+                                <div class="w-100">
+                                    <p class="social-media d-flex justify-content-end">
+                                        <a href="#"
+                                            class="social-icon d-flex align-items-center justify-content-center"><span
+                                                class="fa fa-facebook"></span></a>
+                                        <a href="#"
+                                            class="social-icon d-flex align-items-center justify-content-center"><span
+                                                class="fa fa-twitter"></span></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <form role="form" method="POST" action="{{ url('/register') }}">
+                                {!! csrf_field() !!}
+                                <div class="form-group mb-3">
+                                    <label class="label" for="name">Username</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Username" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="name">Email</label>
+                                    <input type="text" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="password">Password</label>
+                                    <input type="password" id="password" name="password" class="form-control"
+                                        placeholder="Password">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="password">Confirm-Password</label>
+                                    <input type="password" name="password_confirmation" id="password"
+                                        class="form-control" placeholder="Confirm-Password">
+                                </div>
+                                <?php //Success?>
+                                @if ( Session::has('success') )
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <strong>{{ Session::get('success') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                </div>
+                                @endif
+                                <?php //Error?>
+                                @if ( Session::has('error') )
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <strong>{{ Session::get('error') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                </div>
+                                @endif
+                                @if ($errors->any())
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                </div>
+                                @endif
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3">Sign Up
+                                    </button>
+                                </div>
+                                <div class="form-group d-md-flex">
+
+                                    <a href="#">Return</a>
+
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="ho">Email</label>
-                        <input type="text" name="email" class="form-control" id="tennd" placeholder="Tên người dùng">
-                        <p class="emailError"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password"
-                            placeholder="Mật Khẩu">
-                        <p class="passwordError"></p>
-                        <label for="password" class="label">Confirm-Password</label>
-                        <input type="password" class="form-control" name="password_confirmation" id="password"
-                            placeholder="Nhập lại mật khẩu">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Đồng ý với các điều khoản</label>
-                    </div>
-                    <?php //Success?>
-                    @if ( Session::has('success') )
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                        <strong>{{ Session::get('success') }}</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                    </div>
-                    @endif
-                    <?php //Error?>
-                    @if ( Session::has('error') )
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <strong>{{ Session::get('error') }}</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                    </div>
-                    @endif
-                    @if ($errors->any())
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                    </div>
-                    @endif
-                    <button type="submit" class="btn btn-success btn-block my-3">Đăng Ký</button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <script src="{{asset('js/login1.js')}}"></script>
+    <script src="{{asset('js/login2.js')}}"></script>
+    <script src="{{asset('js/login3.js')}}"></script>
+    <script src="{{asset('js/login4.js')}}"></script>
+
 </body>
 
 </html>

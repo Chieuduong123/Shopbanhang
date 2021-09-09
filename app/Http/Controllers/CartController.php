@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Carts;
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Repositories\CartRepository;
+use App\Services\CartService;
+use App\Services\GetCartByConditionsService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
 {
@@ -33,45 +37,38 @@ class CartController extends Controller
      */
     public function cart()
     { 
-        return view('shoppingcart');
+        $carts = Carts::select('carts.id','img','name', 'quantity', 'price')->join('products', 'products.id', '=' ,'carts.product_id')->where(['user_id' => Auth::user()->id])->get();
+        return view('shoppingcart',compact('carts'));
     }
     
     public function addToCart($id)
     {
-        
-        $product = Products::findOrFail($id);
-        $cart = session()->get('carts', []);
-        if(isset($cart[$id])) {
-            $cart[$id]['quatity']++;
+        if (Auth::check() && Auth::user()->type == 1 || ! Auth::check()) {
+            return redirect('login');
         }
-        dd($cart);
-        foreach ($cart as $data) {
-            $qty = $data['quatity'];
-            Carts::create([
-                'user_id' => Auth::user()->id,
-                'product_id' => $product->id,
-                'quality' => $qty
-            ]);
+        $cart = app(CartService::class)->handle($id);
+        if (!$cart) {
+            $cart = [
+                "quantity" => 1,
+                'user_id' =>  Auth::user()->id,
+                'product_id' => $id
+            ];
+            app(CartRepository::class)->store($cart);
+            $cartIds = Carts::where(['user_id' => Auth::user()->id])->pluck('id')->toArray();
+            $countCart = count($cartIds);
+            return redirect()->back()->with(['countCart' => $countCart]);
         }
-        //  session()::forget('carts');
-//         $quantity = $qty + 0;
-// dd($quantity);
-//         if(isset($cart[$id])) {
-//             $cart[$id]['quatity']++;
-//         } else {
-//             $cart[$id] = [
-//                 "name" => $product->name,
-//                 "quatity" => 1,
-//                 "price" => $product->price,
-//                 "img" => $product->img
-//             ];
-//         }
-        // session()->put('carts', $cart);
-        return redirect()->route('cart')->with('success', 'Product added to cart successfully!');
+        $cart->quantity++;
+        $cart->update(['quantity' => $cart->quantity]);
+        $cartIds = Carts::where(['user_id' => Auth::user()->id])->pluck('id')->toArray();
+         $countCart = count($cartIds);
+        return redirect()->back()->with(['countCart' => $countCart]); 
+    
     }
+     
 
     /**
-     * Write code on Method
+     * Write code on MetChod
      *
      * @return response()
      */
@@ -102,9 +99,9 @@ class CartController extends Controller
 
     public function destroy($id)
     {
-        dd($id);
+    
         $cart = Carts::findOrFail($id);
-        dd($cart);
+        $cart->delete();
             return redirect()->route('cart')->with('success', 'Product removed to cart successfully!');
         
     }

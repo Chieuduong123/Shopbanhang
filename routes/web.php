@@ -28,6 +28,10 @@ Route::get('AnhDuong', function(){
     return "Hello everyone";
 });
 
+Route::get('/demo', function () {
+    return view('demologin');
+});
+
 // Route::get('cart', function(){
 //     return  view('shoppingcart');
 // });
@@ -85,6 +89,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 });
 
 Route::get('/shop', [CartController::class, 'index']); 
+Route::get('cart/show-number', [CartController::class, 'showNumberCart'])->name('show.number.cart');
 Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');

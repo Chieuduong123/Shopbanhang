@@ -140,50 +140,43 @@
                     <div class="shopping__cart__table">
                         <table>
                             <thead>
-                                @php $total = 0 @endphp
-                                @foreach((array) session('cart') as $id => $details)
-                                @php $total = $details['price'] * $details['quatity'] @endphp
-                                @endforeach
-                                <tr data-id=" {{ $id }}">
+
+                                <tr data-id="">
                                     <th>Ảnh</th>
-                                    <th style="width: 200px;">Sản phẩm</th>
+                                    <th style=" width: 200px;">Sản phẩm</th>
                                     <th>Số lượng</th>
                                     <th>Giá tiền</th>
-                                    <th>Tổng tiền</th>
                                     <th>Xóa</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if(session('cart'))
-                                @foreach(session('cart') as $id => $details)
+                                @foreach($carts as $cart)
                                 <tr>
                                     <td>
-                                        <div class="product__cart__item__pic"><img
-                                                src="{{asset('img/'.$details['img'])}}" width="70%" height="70%"
-                                                class="img-responsive" /></div>
+                                        <div class="product__cart__item__pic"><img src="{{ asset('img/'.$cart->img) }}"
+                                                width="150px" height="150px" class="img-responsive" /></div>
                                     </td>
                                     <td>
                                         <div class="">
-                                            <h6>{{ $details['name'] }}</h6>
+                                            <h6>{{$cart->name}}
+                                            </h6>
                                         </div>
                                     </td>
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="">
                                                 <input style="width: 70px; text-align: center;" type="number"
-                                                    value="{{ $details['quatity'] }}"
+                                                    value="{{$cart->quantity}}"
                                                     class="form-control quantity update-cart">
                                             </div>
                                         </div>
                                     </td>
-                                    <td data-th=" Price" class="cart__price">${{ $details['price'] }}
+                                    <td data-th=" Price" class="cart__price">{{$cart->price}}
                                     </td>
-                                    <td data-th=" Price" class="cart__price">
-                                        ${{$details['price'] * $details['quatity']}}
-                                    </td>
+
                                     <td>
-                                        <form action=" {{ route('cart.destroy', $id)}}" method="POST">
+                                        <form action="{{ route('cart.destroy',$cart->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -191,74 +184,14 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                                @endif
-                                <!-- <tr>
-                                    <td class=" product__cart__item">
-                                            <div class="product__cart__item__pic">
-                                                <img src="./Image/785650c759f88845cf73cb5725fb177c.jpg " alt="">
-                                            </div>
-                                            <div class="product__cart__item__text">
-                                                <h6>NIKE AIR FORCE 1 LOW SHADOW TRIPLE WHITE NAM NỮ</h6>
 
-                                            </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">950.000đ</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img src="./Image/a25795f2297e5d942db43381d42debd5.jpg " alt="">
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>BALENCIAGA TRIPLE S BLACK CLEAR NAM, NỮ</h6>
-
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">1.600.000đ</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img src="./Image/3207b2c167bd85d6cad3aa61dfee6afc.jpg " alt="">
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>MCQUEEN TRẮNG GÓT ĐEN 'NHUNG' NAM NỮ</h6>
-
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">550.000đ</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>
                     <div class="">
 
                         <div class="continue__btn">
-                            <a href=" {{ route('cart') }}" class="btn btn-warning"><i>Tiếp
+                            <a href="" class="btn btn-warning"><i>Tiếp
                                     tục</a>
                         </div>
 
@@ -280,8 +213,8 @@
                     <div class="cart__total">
                         <h6>Tổng thanh toán</h6>
                         <ul>
-                            <li>${{ $details['price'] * $details['quatity'] }}</li>
-                            <li>${{ $total }}</li>
+                            <li></li>
+                            <li></li>
                              <li>Tổng <span>2.700.000đ</span></li> -->
                 </ul>
                 <!-- <a href="#" class="primary-btn">Thanh toán</a> -->
