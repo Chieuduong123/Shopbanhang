@@ -229,7 +229,7 @@
                                             </ul>
                                         </div>
                                         @endif
-                                        <form class="m-2" method="POST" action="{{ route('products.store') }}"
+                                        <form class="m-1" method="POST" action="{{ route('products.store') }}"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class=" form-group">
@@ -246,6 +246,12 @@
                                                 <input type="file" id="hinhanh" name="img" class="form-control-file "
                                                     style="border: 1px solid rgb(187, 179, 179);">
                                             </div>
+
+                                            <div class="form-group">
+                                                <label for="gia">Số lượng</label>
+                                                <input type="text " name="count" class=" form-control" id="count">
+                                            </div>
+
                                             <div class="form-group">
                                                 <label for="mota">Mô tả</label>
                                                 <input type="text " name="description" class="form-control" id="sp">

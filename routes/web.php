@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController as ControllersProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,20 +27,27 @@ Route::get('/', function () {
 Route::get('AnhDuong', function(){
     return "Hello everyone";
 });
+
+Route::get('/demo', function () {
+    return view('demologin');
+});
+
+// Route::get('cart', function(){
+//     return  view('shoppingcart');
+// });
 // Route::get('/user', [UserController::class, 'index']);
 // Route::get('/product/{id}', [ProductController::class, 'show']);
 // Route::get('/cart/staff/{id}', [ProductController::class, 'getListCart']);
 
-// Route::get('/shop', [ProductController:: class, 'index']);
+ // Route::get('shop', 'App\Http\Controllers\ProductController@currentProduct');
+  Route::get('index', 'App\Http\Controllers\ProductController@index');
+ // Route::get('showdetail', 'App\Http\Controllers\ProductController@showDetail');
+//   Route::get('detail/{id}','App\Http\Controllers\ProductController@viewProduct');
 
-// Route::get('/login', function(){
-//     return view('login');
-// });
 
-// Route::get('/index', function(){
-//     return view('index');
-// });
+Route::get('product/{id}', [ControllersProductController::class, 'showDetail'])->name('detail');
 
+ 
 
 
 
@@ -78,6 +87,13 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     //     // Matches The "/admin/users" URL
     // });
 });
+
+Route::get('/shop', [CartController::class, 'index']); 
+Route::get('cart/show-number', [CartController::class, 'showNumberCart'])->name('show.number.cart');
+Route::get('cart', [CartController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::delete('cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 
 
 

@@ -156,30 +156,16 @@
                             </li>
                         </ul>
                     </div> -->
-                <div class="col-lg-20 col-md-30">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="./Image/anh7.jpg" alt="">
-                            </div>
-                        </div>
-                        <!-- <div class="tab-pane" id="tabs-2" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="./Image/anh14.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-3" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="./Image/anh13.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-4" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="./Image/anh12.jpg" alt="">
+                <div class="col-lg-15 col-md-20">
 
-                            </div>
-                        </div> -->
+
+
+                    <div class="tab-pane active">
+                        <div class="product__details__pic__item">
+                            <img style="height: 35% ;width: 35%" src="{{ asset('img/'.$product->img) }}" alt="">
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -189,20 +175,9 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>Air jordan 1 đen trắng</h4>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                                <span> - 5 Reviews</span>
-                            </div>
-                            <h3>2.000.000đ <span>500.000đ</span></h3>
-                            <p>Người Jordan đã bắt đầu tất cả. Air Jordan 1 là mẫu giày quan trọng nhất trong lịch sử
-                                giày sneaker. Tìm mọi phối màu thiết yếu của Air Jordan 1 High tại đây, cũng như nhiều
-                                bản phát hành của Air Jordan 1 Low và Air Jordan
-                                1 Mid.</p>
+                            <h4>{{$product->name}}</h4>
+                            <h3>{{$product->price}}</h3>
+                            <p>{{$product->description}}</p>
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -219,59 +194,60 @@
                                         <input type="radio" id="sm">
                                     </label>
                                 </div>
-                            </div>
-                            <div class="product__details__cart__option">
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
+                                <br>
+                                <br>
+                                <div class="product__details__cart__option">
+                                    <div class="quantity">
+                                        <div class="">
+                                            <input type="number" style="width: 50px; text-align: center;" value="1">
+                                        </div>
                                     </div>
+                                    <a href="#" class="primary-btn">Thêm vào giỏ hàng</a>
                                 </div>
-                                <a href="#" class="primary-btn">Thêm vào giỏ hàng</a>
+                                <div class="product__details__last__option">
+                                    <h5><span>Đảm bảo thanh toán an toàn</span></h5>
+                                    <img src="img/shop-details/details-payment.png" alt="">
+                                    <ul>
+                                        <li>Mã sản phẩm: {{$product->id}}</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="product__details__last__option">
-                                <h5><span>Đảm bảo thanh toán an toàn</span></h5>
-                                <img src="img/shop-details/details-payment.png" alt="">
-                                <ul>
-                                    <li><span>Mã sản phẩm:</span> jd303</li>
-                                    <li><span>Thể loại:</span> nike</li>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="product__details__tab">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab">Thông
+                                            tin</a>
+                                    </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="product__details__tab">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab">Thông tin</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="tabs-5" role="tabpanel">
-                                    <div class="product__details__tab__content">
-                                        <p class="note">Miễn phí giao hàng đối với đơn hàng trên 1 triệu đồng, giảm 30%
-                                            chp đơn hàng trên 2 triệu đồng .Chương trình khuyến mãi áp dụng từ 30/4 đến
-                                            20/5/2021</p>
-                                        <div class="product__details__tab__content__item">
-                                            <h5>Điều khoản</h5>
-                                            <p>Trong quá trình vận chuyển nếu có nhầm lẫn và sai sót, shop xin hoàn tiền
-                                                100%, không chấp nhận đổi hàng trong điều kiện hàng đã qua sử dụng,
-                                                không còn nguyên hộp, đổi trả trong vòng 1 tuần khi nhận được hàng.</p>
-                                        </div>
-                                        <div class="product__details__tab__content__item">
-                                            <h5>Thanh toán</h5>
-                                            <p> khách hàng khi mua hàng tại male fashion có thể thanh toán theo các hình
-                                                thức sau: chuyển khoản ngân hàng với BIDV,MPBank, Airpay, Momo....</p>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tabs-5" role="tabpanel">
+                                        <div class="product__details__tab__content">
+                                            <p class="note"></p>
+                                            <div class="product__details__tab__content__item">
+                                                <h5>Điều khoản</h5>
+                                                <p>Trong quá trình vận chuyển nếu có nhầm lẫn và sai sót, shop xin hoàn
+                                                    tiền
+                                                    100%, không chấp nhận đổi hàng trong điều kiện hàng đã qua sử dụng,
+                                                    không còn nguyên hộp, đổi trả trong vòng 1 tuần khi nhận được hàng.
+                                                </p>
+                                            </div>
+                                            <div class="product__details__tab__content__item">
+                                                <h5>Thanh toán</h5>
+                                                <p> khách hàng khi mua hàng tại male fashion có thể thanh toán theo các
+                                                    hình
+                                                    thức sau: chuyển khoản ngân hàng với BIDV,MPBank, Airpay, Momo....
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- Shop Details Section End -->
 
@@ -286,15 +262,15 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg"
-                            data-setbg="./Image/b8085d48a3df90f850f530e2bdf7b5f9.jpg ">
-                            <span class="label">New</span>
+                        <div class="product__item__pic set-bg" data-setbg="">
+                            <span class=" label">New</span>
                             <ul class="product__hover">
                                 <li>
                                     <a href="#"><img src="img/icon/heart.png" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
+                                    <a href="#"><img src="img/icon/compare.png" alt="">
+                                        <span>Compare</span></a>
                                 </li>
                                 <li>
                                     <a href="#"><img src="img/icon/search.png" alt=""></a>
@@ -304,13 +280,7 @@
                         <div class="product__item__text">
                             <h6>Jordan 1 đen mix trắng, đỏ</h6>
                             <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
+
                             <h5>2.200.000đ</h5>
                             <div class="product__color__select">
                                 <label for="pc-1">
@@ -326,130 +296,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg"
-                            data-setbg="./Image/78f5ecb064f2f9949cb8e71cb2ca7f9a.jpg">
-                            <ul class="product__hover">
-                                <li>
-                                    <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/icon/search.png" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>Jordan 1 hồng trắng</h6>
-                            <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>1.300.000đ</h5>
-                            <div class="product__color__select">
-                                <label for="pc-4">
-                                    <input type="radio" id="pc-4">
-                                </label>
-                                <label class="active black" for="pc-5">
-                                    <input type="radio" id="pc-5">
-                                </label>
-                                <label class="grey" for="pc-6">
-                                    <input type="radio" id="pc-6">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                    <div class="product__item sale">
-                        <div class="product__item__pic set-bg"
-                            data-setbg="./Image/2ef74a7b628be0c0e4caaabb9ee93d27.jpg " ">
-                            <span class=" label ">Sale</span>
-                            <ul class=" product__hover ">
-                                <li>
-                                    <a href=" # "><img src=" img/icon/heart.png " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href=" # "><img src=" img/icon/compare.png " alt=" "> <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href=" # "><img src=" img/icon/search.png " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class=" product__item__text ">
-                            <h6>Jordan 1 mẫu mới mix tím hồng</h6>
-                            <a href=" # " class=" add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class=" rating ">
-                                <i class=" fa fa-star "></i>
-                                <i class=" fa fa-star "></i>
-                                <i class=" fa fa-star "></i>
-                                <i class=" fa fa-star "></i>
-                                <i class=" fa fa-star-o "></i>
-                            </div>
-                            <h5>2.200.000đ</h5>
-                            <div class=" product__color__select ">
-                                <label for=" pc-7 ">
-                                    <input type=" radio " id=" pc-7 ">
-                                </label>
-                                <label class=" active black " for=" pc-8 ">
-                                    <input type=" radio " id=" pc-8 ">
-                                </label>
-                                <label class=" grey " for=" pc-9 ">
-                                    <input type=" radio " id=" pc-9 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-3 col-md-6 col-sm-6 col-sm-6 ">
-                    <div class=" product__item ">
-                        <div class=" product__item__pic set-bg " data-setbg="
-                            ./Image/55fabf1a9a61ca4c411805885585d9cf.jpg ">
-                            <ul class=" product__hover ">
-                                <li>
-                                    <a href=" # "><img src=" img/icon/heart.png " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href=" # "><img src=" img/icon/compare.png " alt=" "> <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href=" # "><img src=" img/icon/search.png " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class=" product__item__text ">
-                            <h6>Jordan 1 xanh dương</h6>
-                            <a href=" # " class=" add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class=" rating ">
-                                <i class=" fa fa-star-o "></i>
-                                <i class=" fa fa-star-o "></i>
-                                <i class=" fa fa-star-o "></i>
-                                <i class=" fa fa-star-o "></i>
-                                <i class=" fa fa-star-o "></i>
-                            </div>
-                            <h5>3.000.000đ</h5>
-                            <div class=" product__color__select ">
-                                <label for=" pc-10 ">
-                                    <input type=" radio " id=" pc-10 ">
-                                </label>
-                                <label class=" active black " for=" pc-11 ">
-                                    <input type=" radio " id=" pc-11 ">
-                                </label>
-                                <label class=" grey " for=" pc-12 ">
-                                    <input type=" radio " id=" pc-12 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -493,7 +339,8 @@
                     <div class=" footer__widget ">
                         <h6>NewLetter</h6>
                         <div class=" footer__newslatter ">
-                            <p>Hãy là người đầu tiên biết về những người mới đến, tìm sách, bán hàng & khuyến mãi!</p>
+                            <p>Hãy là người đầu tiên biết về những người mới đến, tìm sách, bán hàng &
+                                khuyến mãi!</p>
                             <form action=" # ">
                                 <input type=" text " placeholder=" Nhập email ">
                                 <button type=" submit "><span class=" icon_mail_alt "></span></button>
@@ -516,6 +363,9 @@
             </form>
         </div>
     </div>
+
+
+
     <!-- Search End -->
 
     <!-- Js Plugins -->

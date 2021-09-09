@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
-    public function getLogin() {
+    public function getLogin() {      
+         
         return view('auth/login');
     }
     public function postLogin(LoginRequests $request) {
@@ -25,7 +26,7 @@ class LoginController extends Controller
                 // return redirect('admin');
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
-                Session::flash('error', 'Email hoặc mật khẩu không đúng!');
+                Session::flash('error', 'Email or password error!');
                 return redirect('login');
             }
         }

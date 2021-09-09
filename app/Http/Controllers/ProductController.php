@@ -17,10 +17,16 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\View\View
      */
-    public function index()
+    // public function index()
+    // {
+    //     $products = Products::orderByDesc('id')->paginate(10);
+    //     return view('shopproduct',compact('products'));
+    // }
+
+     public function index()
     {
         $products = Products::orderByDesc('id')->paginate(10);
-        return view('shopproduct',compact('products'));
+        return view('index',compact('products'));
     }
      /**
      * Show the profile for a given user.
@@ -44,10 +50,11 @@ class ProductController extends Controller
         // dd(\DB::getQueryLog());
     }
 
-    public function deleteproductadmin()
+    public function showDetail($id)
     {
-        $products = Products::orderByDesc('id')->paginate(10);
-        return view('deleteproductadmin',compact('products'));
+        $product = Products::findOrFail($id);
+        return view('detailsproduct',compact('product'));
     }
-    
+
+  
 }
