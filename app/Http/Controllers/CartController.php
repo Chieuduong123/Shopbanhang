@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Repositories\CartRepository;
 use App\Services\CartService;
+use App\Services\CountCartByUserService;
 use App\Services\GetCartByConditionsService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -20,8 +21,12 @@ class CartController extends Controller
      */
     public function index()
     {
-        $products = Products::all();
-        return view('shopproduct', compact('products'));
+        $products = Products::orderByDesc('id')->paginate(9);
+        $countCart = null;
+        if (Auth::check() && Auth::user()->type == 2) {
+            $countCart = app(CountCartByUserService::class)->handle();
+        }
+        return view('shopproduct', compact('products', 'countCart'));
     }
     /**
      * Write code on Method
@@ -37,8 +42,14 @@ class CartController extends Controller
      */
     public function cart()
     { 
+         if (Auth::check() && Auth::user()->type == 1 || ! Auth::check()) {
+            return redirect('login');
+        }
         $carts = Carts::select('carts.id','img','name', 'quantity', 'price')->join('products', 'products.id', '=' ,'carts.product_id')->where(['user_id' => Auth::user()->id])->get();
-        return view('shoppingcart',compact('carts'));
+         if (Auth::check() && Auth::user()->type == 2) {
+            $countCart = app(CountCartByUserService::class)->handle();
+        }
+        return view('shoppingcart',compact('carts','countCart'));
     }
     
     public function addToCart($id)
@@ -54,14 +65,12 @@ class CartController extends Controller
                 'product_id' => $id
             ];
             app(CartRepository::class)->store($cart);
-            $cartIds = Carts::where(['user_id' => Auth::user()->id])->pluck('id')->toArray();
-            $countCart = count($cartIds);
+            $countCart = app(CountCartByUserService::class)->handle();
             return redirect()->back()->with(['countCart' => $countCart]);
         }
         $cart->quantity++;
         $cart->update(['quantity' => $cart->quantity]);
-        $cartIds = Carts::where(['user_id' => Auth::user()->id])->pluck('id')->toArray();
-         $countCart = count($cartIds);
+        $countCart = app(CountCartByUserService::class)->handle();
         return redirect()->back()->with(['countCart' => $countCart]); 
     
     }

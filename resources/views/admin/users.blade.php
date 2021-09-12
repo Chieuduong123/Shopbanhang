@@ -1,281 +1,209 @@
+<!--
+=========================================================
+* Soft UI Dashboard - v1.0.3
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <title>admni/kho</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Soft UI Dashboard by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 
-    <!-- Favicons -->
-    <link href="../Admin\Image/logo1.JPG" rel="icon">
-    <link href="../Admin\Image/logo1.JPG" rel="apple-touch-icon">
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <!--external css-->
-    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{asset('css/styleadmin.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/styleDemo.css')}}">
-    <link rel="stylesheet" href="{{asset('css/Hieu1.css')}}">
-    <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet">
-    <link href="{{asset('css/table-responsive.css')}}" rel="stylesheet">
-    <style type="text/css">
-    * {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    }
-    </style>
 </head>
 
-
-
-<body>
-    <section id="container">
-
-        <header class="header black-bg">
-            <div class="sidebar-toggle-box">
-                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-            </div>
-            <!--logo start-->
-            <a class="navbar-brand " href="#">
-                <img src="../Admin\Image/logo1.JPG" alt="" style="size: 50%;">
-            </a>
-            <!--logo end-->
-            <div class="nav notify-row" id="top_menu">
-                <ul class="nav top-menu">
-
-                    <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="indexadmin.html#" aria-expanded="false">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-theme">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">Bạn có 5 bình luận</p>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh10.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Trần Tuấn</span>
-                                        <span class="time">Bây giờ</span>
-                                    </span>
-                                    <span class="message">
-                                        Cao 1m7 mặc được ko ạ?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh11.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Hoàng Nhi</span>
-                                        <span class="time">40 phút trước</span>
-                                    </span>
-                                    <span class="message">
-                                        Chất vải tốt không?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh12.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Nguyễn Anh</span>
-                                        <span class="time">2 giờ trước</span>
-                                    </span>
-                                    <span class="message">
-                                        Set này có hợp không ạ?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh8.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Nguyễn Nam</span>
-                                        <span class="time">4 giờ trước/span&gt;
-                                        </span>
-                                        <span class="message">
-                                            Cái này sao ạ?
-                                        </span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">Xem tất cả bình luận</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- inbox dropdown end -->
-                    <!-- notification dropdown start-->
-                    <li id="header_notification_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="indexadmin.html#">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="badge bg-warning">7</span>
-                        </a>
-                        <ul class="dropdown-menu extended notification">
-                            <div class="notify-arrow notify-arrow-yellow"></div>
-                            <li>
-                                <p class="yellow">Bạn có 7 thông báo mới</p>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Máy chủ bị quá
-                                    tải.
-                                    <span class="small italic">4 phút</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-warning"><i class="fa fa-bell"></i></span> Bộ nhớ # 2 Không
-                                    phản hồi.
-                                    <span class="small italic">30 phút</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Dung lượng đĩa
-                                    đạt 85%.
-                                    <span class="small italic">2 giờ</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-success"><i class="fa fa-plus"></i></span> Người dùng mới
-                                    đã đăng ký.
-                                    <span class="small italic">3 giờ.</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">Xem tất cả thông báo</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- notification dropdown end -->
-                </ul>
-                <!--  notification end -->
-            </div>
-            <div class="top-menu">
-                <ul class="nav pull-right top-menu">
-                    <li><a class="Đăng xuất" href="#">Đăng xuất</a></li>
-                </ul>
-            </div>
-        </header>
-        <!--header end-->
-
-        <aside>
-            <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered">
-                        <a href="#"><img src="../Admin\Image/Anh9.jpeg" class="img-circle" width="80"></a>
-                    </p>
-                    <h5 class="centered">Ánh Dương</h5>
-                    <li class="mt">
-                        <a class="active" href="indexadmin.html">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Doanh thu</span>
-                        </a>
-                    </li>
-
-                    <li class="sub-menu dcjq-parent-li">
-                        <a href="javascript:;" class="dcjq-parent">
-                            <i class="fa fa-th"></i>
-                            <span>Thông tin</span>
-                            <span class="dcjq-icon"></span></a>
-                        <ul class="sub" style="display: none;">
-                            <li><a href="khachhang.html">Thông tin khách hàng</a></li>
-                            <li><a href="kho.html">Thông tin kho</a></li>
-                            <li><a href="doitac.html">Thông tin đối tác</a></li>
-                            <li><a href="themsanpham.html">Thêm sản phẩm mới</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="sub-menu dcjq-parent-li">
-                        <a href="javascript:;" class="dcjq-parent">
-                            <i class="fa fa-comments-o"></i>
-                            <span>Bình luận</span>
-                            <span class="dcjq-icon"></span></a>
-                        <ul class="sub" style="display: none;">
-                            <li><a href="binhluan.html">Lobby</a></li>
-                            <li><a href="binhluan.html"> Chat Room</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- sidebar menu end-->
-            </div>
-        </aside>
-
-
-        <section id="main-content">
-
-            <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i>Thông tin khách hàng</h3>
-                <div class="row mt">
-                    <div class="col-lg-12">
-                        <div class="content-panel">
-                            <h4><i class="fa fa-angle-right"></i></h4>
-                            <section id="unseen">
-
-
-                                <table class="table table-bordered table-striped table-condensed">
+<body class="g-sidenav-show  bg-gray-100">
+    @include('aside')
+    <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+        @include('nav')
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>Authors table</h6>
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Mã</th>
-                                            <th>Tên khách hàng</th>
-                                            <th>Email</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                ID</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Name</th>
+
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                email</th>
+
+                                            <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
                                     @foreach($users as $user)
                                     <tbody>
+
+
+                                        <!-- <span class="badge badge-sm bg-gradient-success">Online</span> -->
                                         <tr>
-                                            <td>{{$user->id}}</td>
-                                            <td>{{$user->name}}</td>
-                                            <td>{{$user->email}}</td>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <h6 class="mb-0 text-sm">{{$user->id}}</h6>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">{{$user->name}}</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle text-center">
+                                                <p class="text-xs text-secondary mb-0">{{$user->email}}</p>
+
+                                            </td>
+
                                         </tr>
                                     </tbody>
                                     @endforeach
                                 </table>
                                 <div class="d-flex justify-content-center">
                                     {{$users->links("pagination::bootstrap-4")}}</div>
-                            </section>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
+            </div>
 
 
 
-        <script src="{{asset('js/jquery.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
-        <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
-        <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
-        <!--common script for all pages-->
-        <script src="{{asset('js/common-scripts.js')}}"></script>
-        <!--script for this page-->
+        </div>
+    </main>
+    <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
+        <div class="card shadow-lg ">
+            <div class="card-header pb-0 pt-3 ">
+                <div class="float-start">
+                    <h5 class="mt-3 mb-0">Soft UI Configurator</h5>
+                    <p>See our dashboard options.</p>
+                </div>
+                <div class="float-end mt-4">
+                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <!-- End Toggle Button -->
+            </div>
+            <hr class="horizontal dark my-1">
+            <div class="card-body pt-sm-3 pt-0">
+                <!-- Sidebar Backgrounds -->
+                <div>
+                    <h6 class="mb-0">Sidebar Colors</h6>
+                </div>
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors my-2 text-start">
+                        <span class="badge filter bg-gradient-primary active" data-color="primary"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-dark" data-color="dark"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-info" data-color="info"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-success" data-color="success"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-warning" data-color="warning"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-danger" data-color="danger"
+                            onclick="sidebarColor(this)"></span>
+                    </div>
+                </a>
+                <!-- Sidenav Type -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Sidenav Type</h6>
+                    <p class="text-sm">Choose between 2 different sidenav types.</p>
+                </div>
+                <div class="d-flex">
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active" data-class="bg-transparent"
+                        onclick="sidebarType(this)">Transparent</button>
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2" data-class="bg-white"
+                        onclick="sidebarType(this)">White</button>
+                </div>
+                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+                <!-- Navbar Fixed -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Navbar Fixed</h6>
+                </div>
+                <div class="form-check form-switch ps-0">
+                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
+                        onclick="navbarFixed(this)">
+                </div>
+                <hr class="horizontal dark my-sm-4">
+                <div class="w-100 text-center">
 
 
-
-
-    </section>
-    <div id="ascrail2000" class="nicescroll-rails"
-        style="width: 3px; z-index: auto; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; left: 207px; height: 754px; display: none; opacity: 0;">
-        <div
-            style="position: relative; top: 0px; float: right; width: 3px; height: 0px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px;">
+                </div>
+            </div>
         </div>
     </div>
-    <div id="ascrail2000-hr" class="nicescroll-rails"
-        style="height: 3px; z-index: auto; background: rgb(64, 64, 64); top: 751px; left: 0px; position: fixed; cursor: default; display: none; opacity: 0;">
-        <div
-            style="position: relative; top: 0px; height: 3px; width: 0px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px; left: 0px;">
-        </div>
-    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min2.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+    </script>
+    <script>
+    ClassicEditor
+        .create(document.querySelector('#editor1'))
+        .catch(error => {
+            console.error(error);
+        });
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 </body>
 
 </html>

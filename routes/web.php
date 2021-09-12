@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController as ControllersProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +29,9 @@ Route::get('AnhDuong', function(){
     return "Hello everyone";
 });
 
-Route::get('/demo', function () {
-    return view('demologin');
-});
+// Route::get('/checkout', function () {
+//     return view('checkout');
+// });
 
 // Route::get('cart', function(){
 //     return  view('shoppingcart');
@@ -43,7 +44,6 @@ Route::get('/demo', function () {
   Route::get('index', 'App\Http\Controllers\ProductController@index');
  // Route::get('showdetail', 'App\Http\Controllers\ProductController@showDetail');
 //   Route::get('detail/{id}','App\Http\Controllers\ProductController@viewProduct');
-
 
 Route::get('product/{id}', [ControllersProductController::class, 'showDetail'])->name('detail');
 
@@ -94,6 +94,7 @@ Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::delete('cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 
 
