@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Carts;
 use App\Models\Products;
 use App\Models\User;
+use App\Services\CountCartByUserService;
 use App\Services\UserService;
+use Illuminate\Support\Facades\Auth;
 
 // use App\Http\Controllers\Controller;
 // use App\Models\User;
@@ -35,6 +37,16 @@ class UserController extends Controller
       public function users()
     {
         $products = User::orderByDesc('id')->paginate(5);
-       return view('admin.users',compact('users'));
+        return view('admin.users',compact('users'));
+    }
+    
+      public function profile($id)
+    {
+          $user = User::findOrFail($id);
+          $countCart = null;
+          if (Auth::check() && Auth::user()->type == 2) {
+          $countCart = app(CountCartByUserService::class)->handle();
+        }
+        return view('profile',compact('user','countCart'));
     }
 }

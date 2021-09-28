@@ -1,125 +1,113 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <title>Quản Lý Kho</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Soft UI Dashboard by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 
-    <!-- Favicons -->
-    <link href="{{asset('img/LoGo.JPG')}}" rel="icon">
-    <link href="{{asset('img/LoGo.JPG')}}" rel="apple-touch-icon">
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <!--external css-->
-    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{asset('css/styleadmin.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/styleDemo.css')}}">
-    <link rel="stylesheet" href="{{asset('css/Hieu1.css')}}">
-    <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet">
-    <link href="{{asset('css/table-responsive.css')}}" rel="stylesheet">
-    <style type="text/css">
-    * {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-        word-wrap: break-word !important;
-    }
-    </style>
 </head>
 
-<body>
-    <section id="container">
-
-        <header class="header black-bg">
-            <div class="sidebar-toggle-box">
-                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-            </div>
-            <!--logo start-->
-            <a class="navbar-brand " href="#">
-                <img src="../Admin\Image/logo1.JPG" alt="" style="size: 50%;">
-            </a>
-            <!--logo end-->
-
-            <div class="top-menu">
-                <ul class="nav pull-right top-menu">
-                    <li><a class="Đăng xuất" href="index">Đăng xuất</a></li>
-                </ul>
-            </div>
-        </header>
-        <!--header end-->
-
-        <aside>
-            <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered">
-                        <a href="#"><img src="{{asset('img/IMG_2720.JPG')}}" class="img-circle" width="80"></a>
-                    </p>
-                    <h5 class="centered">Ánh Dương</h5>
-                    <li class="mt">
-                        <a href="products">
-                            <span>Thông Tin Kho</span>
-                        </a>
-                    </li>
-
-                    <li class="sub-menu dcjq-parent-li">
-                        <a>
-                            <span>Trang Chủ</span>
-                            <span class="dcjq-icon"></span></a>
-                        <ul class="sub" style="display: none;">
-                            <li><a href="users">Thông tin khách hàng</a></li>
-                            <li><a href="products/create">Thêm sản phẩm mới</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- sidebar menu end-->
-            </div>
-        </aside>
-
-
-        <section id="main-content">
-
-            <section class="wrapper">
-                @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-                @endif
-                <h3><i class=" fa fa-angle-right"></i>Thông tin kho</h3>
-                <div class="row mt">
-                    <div class="col-lg-12">
-                        <div class="content-panel">
-                            <h4><i class="fa fa-angle-right"></i> Kho 1</h4>
-                            <section id="unseen">
-
-
-                                <table class=" table table-bordered table-striped
-                                    table-condensed">
+<body class="g-sidenav-show  bg-gray-100">
+    @include('aside')
+    <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+        @include('nav')
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>Products table</h6>
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Mã</th>
-                                            <th>Tên sản phẩm</th>
-                                            <th class="numeric">Giá bán</th>
-                                            <th class="numeric">Số lượng</th>
-                                            <th>Mô tả</th>
-                                            <th>Hành động</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                ID</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Name</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Price</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Count</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Description</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Action</th>
+
+
                                         </tr>
                                     </thead>
                                     @foreach($products as $product)
                                     <tbody>
-                                        <tr style="word-wrap: break-word;">
-                                            <td>{{$product->id}}</td>
-                                            <td style="width: 100px;">
-                                                <p style=" width: 300px;">{{$product->name}}</p>
+
+
+                                        <!-- <span class="badge badge-sm bg-gradient-success">Online</span> -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <h6 class="mb-0 text-sm">{{$product->id}}</h6>
+                                                    </div>
+
+                                                </div>
                                             </td>
-                                            <td class=" numeric">{{$product->price}}</td>
-                                            <td class="numeric">{{$product->count}}</td>
-                                            <td style="word-wrap: break-word;">
-                                                <p style=" width: 300px;">
-                                                    {{$product->description}}</p>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 style=" width: 250px;" class="mb-0 text-sm">
+                                                            {{$product->name}}</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">{{$product->price}}</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">{{$product->count}}</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 style=" width: 250px;" class="mb-0 text-sm">
+                                                            {{$product->description}}</h6>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td>
                                                 <form action=" {{ route('products.destroy',$product->id) }}"
@@ -134,263 +122,114 @@
 
                                                     <button type="submit" class="btn btn-danger">Delete</button>
                                             </td>
-
                                         </tr>
-                                        <!-- <tr>
-                                            <td>AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt">
-                    <div class="col-lg-12">
-                        <div class="content-panel">
-                            <h4><i class="fa fa-angle-right"></i>Kho 2</h4>
-                            <section id="no-more-tables">
-                                <table class="table table-bordered table-striped table-condensed cf">
-
-                                    <thead class="cf">
-                                        <tr>
-                                            <th>Mã</th>
-                                            <th>Tên sản phẩm</th>
-                                            <th class="numeric">Giá nhập</th>
-                                            <th class="numeric">Giá nhập</th>
-                                            <th class="numeric">Còn lại</th>
-                                            <th class="numeric">Đang nhập</th>
-                                            <th class="numeric">Đã bán</th>
-                                            <th class="numeric">Lợi nhuận trong tháng</th>
-                                            <th class="numeric">Tổng lợi nhuận</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td data-title="Code">AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-title="Code">AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-title="Code">AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-title="Code">AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-title="Code">AAC</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-title="Code">AAD</td>
-                                            <td>Giày jordan1 màu xanh ngọc</td>
-                                            <td class="numeric">450.000</td>
-                                            <td class="numeric">800.000</td>
-                                            <td class="numeric">500 đôi</td>
-                                            <td class="numeric">100 đôi</td>
-                                            <td class="numeric">300</td>
-                                            <td class="numeric">9.000.000</td>
-                                            <td class="numeric">20.200.000</td>
-                                        </tr> -->
-
-
                                     </tbody>
                                     @endforeach
                                 </table>
                                 <div class="d-flex justify-content-center">
                                     {{$products->links("pagination::bootstrap-4")}}</div>
-                            </section>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
+            </div>
 
 
 
-        <script src="{{asset('js/jquery.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
-        <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
-        <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
-        <!--common script for all pages-->
-        <script src="{{asset('js/common-scripts.js')}}"></script>
-        <!--script for this page-->
+        </div>
+    </main>
+    <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
+        <div class="card shadow-lg ">
+            <div class="card-header pb-0 pt-3 ">
+                <div class="float-start">
+                    <h5 class="mt-3 mb-0">Soft UI Configurator</h5>
+                    <p>See our dashboard options.</p>
+                </div>
+                <div class="float-end mt-4">
+                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <!-- End Toggle Button -->
+            </div>
+            <hr class="horizontal dark my-1">
+            <div class="card-body pt-sm-3 pt-0">
+                <!-- Sidebar Backgrounds -->
+                <div>
+                    <h6 class="mb-0">Sidebar Colors</h6>
+                </div>
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors my-2 text-start">
+                        <span class="badge filter bg-gradient-primary active" data-color="primary"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-dark" data-color="dark"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-info" data-color="info"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-success" data-color="success"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-warning" data-color="warning"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-danger" data-color="danger"
+                            onclick="sidebarColor(this)"></span>
+                    </div>
+                </a>
+                <!-- Sidenav Type -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Sidenav Type</h6>
+                    <p class="text-sm">Choose between 2 different sidenav types.</p>
+                </div>
+                <div class="d-flex">
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active" data-class="bg-transparent"
+                        onclick="sidebarType(this)">Transparent</button>
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2" data-class="bg-white"
+                        onclick="sidebarType(this)">White</button>
+                </div>
+                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+                <!-- Navbar Fixed -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Navbar Fixed</h6>
+                </div>
+                <div class="form-check form-switch ps-0">
+                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
+                        onclick="navbarFixed(this)">
+                </div>
+                <hr class="horizontal dark my-sm-4">
+                <div class="w-100 text-center">
 
 
-
-
-    </section>
-    <div id="ascrail2000" class="nicescroll-rails"
-        style="width: 3px; z-index: auto; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; left: 207px; height: 754px; display: none; opacity: 0;">
-        <div
-            style="position: relative; top: 0px; float: right; width: 3px; height: 0px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px;">
+                </div>
+            </div>
         </div>
     </div>
-    <div id="ascrail2000-hr" class="nicescroll-rails"
-        style="height: 3px; z-index: auto; background: rgb(64, 64, 64); top: 751px; left: 0px; position: fixed; cursor: default; display: none; opacity: 0;">
-        <div
-            style="position: relative; top: 0px; height: 3px; width: 0px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px; left: 0px;">
-        </div>
-    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min2.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+    </script>
+    <script>
+    ClassicEditor
+        .create(document.querySelector('#editor1'))
+        .catch(error => {
+            console.error(error);
+        });
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 </body>
 
 </html>

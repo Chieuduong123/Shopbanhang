@@ -7,7 +7,7 @@
     <meta name="keywords" content="Dream-Sport, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> shop giày</title>
+    <title>Dream Shop</title>
 
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -24,132 +24,21 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
 
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__option">
-            <div class="offcanvas__links">
-                <a href="login.html">Đăng nhập</a>
-                <a href="contact.html">Câu hỏi</a>
-            </div>
-
-        </div>
-        <div class="offcanvas__nav__option">
-            <a href="#" class="search-switch"><img src="{{asset('icon/search.png')}}" alt=""></a>
-            <a href="#"><img src="{{asset('icon/heart.png')}}" alt=""></a>
-            <a href="#"><img src="{{asset('icon/cart.png')}}" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__text">
-            <p> Miễn phí vận chuyển - giao hàng liền tay</p>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
-
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Miễn phí vận chuyển - giao hàng liền tay</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="login">Đăng nhập</a>
-                                <a href="register">Đăng ký</a>
-                                <a href="contact.html">Câu hỏi</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="{{asset('img/LoGo.JPG')}}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="index">Trang chủ</a></li>
-                            <li><a href="shop">Cửa hàng</a></li>
-                            <li><a href="#">Trang </a>
-                                <ul class="dropdown">
-                                    <li><a href="./Admin/indexadmin.html">Admin</a></li>
-                                    <li><a href="./about.html">Thông tin</a></li>
-                                    <li><a href="./shopping-cart.html">Giỏ hàng</a></li>
-                                    <li><a href="./checkout.html">Kiểm tra</a></li>
-                                    <li><a href=""> Chi tiết Blog</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Liên hệ</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="{{asset('icon/search.png')}}" alt=""></a>
-                        <a href="#"><img src="{{asset('icon/heart.png')}}" alt=""></a>
-                        <a href="#"><img src="{{asset('icon/cart.png')}}" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
-        </div>
-    </header>
-    <!-- Header Section End -->
-
+    @include('header')
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="{{asset('img/giày-sneakers-2-elle-man-8.jpg')}}">
+            <div style="width: 1360px; height: 700px;" class="hero__items set-bg"
+                data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
                 <div class=" container ">
                     <div class="row ">
                         <div class="col-xl-5 col-lg-7 col-md-8 ">
                             <div class="hero__text ">
                                 <h2>Bộ sưu tập mới nhất của addidas</h2>
                                 <p>Uy tín tạo nên chất lượng </p>
-                                <a href="# " class="primary-btn ">Mua ngay<span class="arrow_right "></span></a>
-                                <div class="hero__social ">
-                                    <a href="# "><i class="fa fa-facebook "></i></a>
-                                    <a href="# "><i class="fa fa-twitter "></i></a>
-                                    <a href="# "><i class="fa fa-pinterest "></i></a>
-                                    <a href="# "><i class="fa fa-instagram "></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg " data-setbg="{{asset('img/Remini20210507075959483.jpg')}} ">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col-xl-5 col-lg-7 col-md-8 ">
-                            <div class="hero__text ">
+                                <a href="# " class="primary-btn ">Mua ngay</a>
 
-                                <h2>Bộ sưu tập mới nhất của Balenciaga</h2>
-                                <p>Uy tín tạo nên chất lượng </p>
-                                <a href="# " class="primary-btn ">Mua ngay<span class="arrow_right "></span></a>
-                                <div class="hero__social ">
-                                    <div class="hero__social ">
-                                        <a href="# "><i class="fa fa-facebook "></i></a>
-                                        <a href="# "><i class="fa fa-twitter "></i></a>
-                                        <a href="# "><i class="fa fa-pinterest "></i></a>
-                                        <a href="# "><i class="fa fa-instagram "></i></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,12 +55,12 @@
                     <div class="banner__item banner__item--middle ">
                         <a href="./shop-details.html">
                             <div class="banner__item__pic ">
-                                <img src=".{{asset('img/fa24e9c3624d2beebdda6adb575efb80.jpg')}} " alt=" ">
+                                <img src="{{asset('img/fa24e9c3624d2beebdda6adb575efb80.jpg')}} " alt=" ">
                             </div>
                         </a>
                         <div class="banner__item__text ">
                             <h2>Mẫu mới nhất của converst</h2>
-                            <a href="# ">Mua ngay</a>
+                            <a href="#">Mua ngay</a>
                         </div>
 
                     </div>
@@ -236,20 +125,15 @@
                                         <span>Compare</span></a>
                                 </li>
                                 <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
+                                    <a href="{{ route('detail', $product->id) }}"><img
+                                            src="{{asset('icon/search.png')}} "></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="product__item__text ">
                             <h6>{{$product->name}}</h6>
-                            <a href="# " class="add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class="rating ">
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
+                            <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart ">+ Thêm vào giỏ hàng</a>
+
                             <h5>{{$product->price}}</h5>
                             <div class="product__color__select ">
                                 <label for="pc-1 ">
@@ -266,307 +150,7 @@
                     </div>
                 </div>
                 @endforeach
-                <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales ">
-                    <div class="product__item ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg=".{{asset('img/785650c759f88845cf73cb5725fb177c.jpg ')}}">
-                            <ul class="product__hover ">
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/heart.png')}} " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/compare.png')}} " alt=" ">
-                                        <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text ">
-                            <h6>NIKE AIR FORCE 1 LOW SHADOW TRIPLE WHITE NAM NỮ</h6>
-                            <a href="# " class="add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class="rating ">
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
-                            <h5>950.000đ</h5>
-                            <div class="product__color__select ">
-                                <label for="pc-4 ">
-                                    <input type="radio " id="pc-4 ">
-                                </label>
-                                <label class="active black " for="pc-5 ">
-                                    <input type="radio " id="pc-5 ">
-                                </label>
-                                <label class="grey " for="pc-6 ">
-                                    <input type="radio " id="pc-6 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals ">
-                    <div class="product__item sale ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg="{{asset('img/a25795f2297e5d942db43381d42debd5.jpg')}} ">
-                            <span class="label ">Sale</span>
-                            <ul class="product__hover ">
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/heart.png')}} " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/compare.png')}} " alt=" ">
-                                        <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text ">
-                            <h6>BALENCIAGA TRIPLE S BLACK CLEAR NAM, NỮ</h6>
-                            <a href="# " class="add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class="rating ">
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
-                            <h5>1.600.000đ</h5>
-                            <div class="product__color__select ">
-                                <label for="pc-7 ">
-                                    <input type="radio " id="pc-7 ">
-                                </label>
-                                <label class="active black " for="pc-8 ">
-                                    <input type="radio " id="pc-8 ">
-                                </label>
-                                <label class="grey " for="pc-9 ">
-                                    <input type="radio " id="pc-9 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales ">
-                    <div class="product__item ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg="{{asset('img/3207b2c167bd85d6cad3aa61dfee6afc.jpg')}} ">
-                            <ul class="product__hover ">
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/heart.png')}} " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/compare.png')}} " alt=" ">
-                                        <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text ">
-                            <h6>MCQUEEN TRẮNG GÓT ĐEN 'NHUNG' NAM NỮ</h6>
-                            <a href="# " class="add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class="rating ">
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
-                            <h5>550.000đ</h5>
-                            <div class="product__color__select ">
-                                <label for="pc-10 ">
-                                    <input type="radio " id="pc-10 ">
-                                </label>
-                                <label class="active black " for="pc-11 ">
-                                    <input type="radio " id="pc-11 ">
-                                </label>
-                                <label class="grey " for="pc-12 ">
-                                    <input type="radio " id="pc-12 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals ">
-                    <div class="product__item ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg="{{asset('img/bb4d30d30bc538f8ba3625e5b99a562c.jpg')}} ">
-                            <ul class="product__hover ">
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/heart.png')}} " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/compare.png')}} " alt=" ">
-                                        <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text ">
-                            <h6>CONVERSE CHUCK 1970 TÍM CỔ CAO NAM, NỮ</h6>
-                            <a href="# " class="add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class="rating ">
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
-                            <h5>800.000đ</h5>
-                            <div class="product__color__select ">
-                                <label for="pc-13 ">
-                                    <input type="radio " id="pc-13 ">
-                                </label>
-                                <label class="active black " for="pc-14 ">
-                                    <input type="radio " id="pc-14 ">
-                                </label>
-                                <label class="grey " for="pc-15 ">
-                                    <input type="radio " id="pc-15 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales ">
-                    <div class="product__item sale ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg="{{asset('img/mlb-new-york-yankees-big-ball-chunky-a.jpg')}} ">
-                            <span class="label ">Sale</span>
-                            <ul class="product__hover ">
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/heart.png')}} " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/compare.png')}} " alt=" ">
-                                        <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text ">
-                            <h6>MLB NEW YORK MONOGRAM LT YELLOW BIG BALL CHUNKY</h6>
-                            <a href="# " class="add-cart ">+ Thêm vào giỏ hành</a>
-                            <div class="rating ">
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
-                            <h5>1.400.000đ</h5>
-                            <div class="product__color__select ">
-                                <label for="pc-16 ">
-                                    <input type="radio " id="pc-16 ">
-                                </label>
-                                <label class="active black " for="pc-17 ">
-                                    <input type="radio " id="pc-17 ">
-                                </label>
-                                <label class="grey " for="pc-18 ">
-                                    <input type="radio " id="pc-18 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals ">
-                    <div class="product__item ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg="{{asset('img/74584821_383659069190026_8092919902765056000_n.jpg')}} ">
-                            <ul class="product__hover ">
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/heart.png')}} " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/compare.png')}} " alt=" ">
-                                        <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text ">
-                            <h6>ADIDAS ALPHABOUNCE INSTINCT M GREY SILVER 1:1</h6>
-                            <a href="# " class="add-cart ">+ Thêm vài giỏ hàng</a>
-                            <div class="rating ">
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
-                            <h5>1.100.000đ</h5>
-                            <div class="product__color__select ">
-                                <label for="pc-19 ">
-                                    <input type="radio " id="pc-19 ">
-                                </label>
-                                <label class="active black " for="pc-20 ">
-                                    <input type="radio " id="pc-20 ">
-                                </label>
-                                <label class="grey " for="pc-21 ">
-                                    <input type="radio " id="pc-21 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales ">
-                    <div class="product__item ">
-                        <div class="product__item__pic set-bg "
-                            data-setbg="{{asset('img/b09ce651ff04c85f5de862f1c1a27937.jpg')}} ">
-                            <ul class="product__hover ">
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/heart.png')}} " alt=" "></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/compare.png')}} " alt=" ">
-                                        <span>Compare</span></a>
-                                </li>
-                                <li>
-                                    <a href="# "><img src="{{asset('icon/search.png')}} " alt=" "></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text ">
-                            <h6>NIKE AIR JORDAN 1 LOW 'LAKERS' YELLOW WHITE BLACK PURPLE 1:1</h6>
-                            <a href="# " class="add-cart ">+ Thêm vào giỏ hàng</a>
-                            <div class="rating ">
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                                <i class="fa fa-star-o "></i>
-                            </div>
-                            <h5>1.200.000đ</h5>
-                            <div class="product__color__select ">
-                                <label for="pc-22 ">
-                                    <input type="radio " id="pc-22 ">
-                                </label>
-                                <label class="active black " for="pc-23 ">
-                                    <input type="radio " id="pc-23 ">
-                                </label>
-                                <label class="grey " for="pc-24 ">
-                                    <input type="radio " id="pc-24 ">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </section>
-    <!-- Product Section End -->
-
     <!-- Categories Section Begin -->
     <section class="categories spad ">
         <div class="container ">
@@ -731,70 +315,7 @@
     </section>
     <!-- Latest Blog Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer ">
-        <div class="container ">
-            <div class="row ">
-                <div class="col-lg-3 col-md-6 col-sm-6 ">
-                    <div class="footer__about ">
-                        <div class="footer__logo ">
-                            <a href="# "><img src="{{asset('img/LoGo.JPG')}} " alt=" "></a>
-                        </div>
-                        <p>Lấy khách hàng làm trung tâm, tạo cảm hứng thiết kế</p>
-                        <a href="# "><img src="{{asset('img/payment.png')}} " alt=" "></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6 ">
-                    <div class="footer__widget ">
-                        <h6>Mua sắm</h6>
-                        <ul>
-                            <li><a href="shop.html">Cửa hàng</a></li>
-                            <li><a href="# ">Mẫu giày mới</a></li>
-                            <li><a href="# ">Thông tin</a></li>
-                            <li><a href="# ">Sale</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 ">
-                    <div class="footer__widget ">
-                        <h6>Liên hệ</h6>
-                        <ul>
-                            <li><a href="# ">Liên hệ với chúng tôi</a></li>
-                            <li><a href="# ">Đổi trả</a></li>
-                            <li><a href="# ">Phương thức thanh toán</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6 ">
-                    <div class="footer__widget ">
-                        <h6>NewLetter</h6>
-                        <div class="footer__newslatter ">
-                            <p>Hãy là người đầu tiên biết về những người mới đến, tìm sách, bán hàng & khuyến mãi!</p>
-                            <form action="# ">
-                                <input type="text " placeholder="Nhập email ">
-                                <button type="submit "><span class="icon_mail_alt "></span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Search Begin -->
-    <div class="search-model ">
-        <div class="h-100 d-flex align-items-center justify-content-center ">
-            <div class="search-close-switch ">+</div>
-            <form class="search-model-form ">
-                <input type="text " id="search-input " placeholder="Search here..... ">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
-
+    @include('footer')
     <!-- Js Plugins -->
     <script src="{{asset('js/jquery-3.3.1.min.js')}} "></script>
     <script src="{{asset('js/bootstrap.min.js')}} "></script>

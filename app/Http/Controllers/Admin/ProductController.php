@@ -7,9 +7,7 @@ use App\Http\Requests\Admin\PostProductRequest;
 use App\Http\Requests\Admin\UpdateProductRequest;
 use App\Models\Products;
 use App\Services\Admin\ProductService;
-use App\Services\UploadImageService;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
+
 
 class ProductController extends Controller
 {

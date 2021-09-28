@@ -1,495 +1,481 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <title>admin</title>
-    <link href="../Admin\Image/logo1.JPG" rel="icon">
-    <link href="../Admin\Image/logo1.JPG" rel="apple-touch-icon">
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/styleDemo.css')}}">
-    <link rel="stylesheet" href="{{asset('css/Hieu1.css')}}">
-    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/zabuto_calendar.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery.gritter.css')}}">
-    <link href="{{asset('css/styleadmin.css')}}" rel="stylesheet">
-    <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet">
-    <script src="{{asset('js/Chart.js')}}"></script>
-    <style type="text/css">
-    * {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Soft UI Dashboard by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="{{asset('css/nucleo-icons.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="{{asset('/css/nucleo-svg.css')}}" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="{{asset('css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet" />
 
-    .jqstooltip {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        display: block;
-        visibility: hidden;
-        background: rgb(0, 0, 0) transparent;
-        background-color: rgba(0, 0, 0, 0.6);
-        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-        color: white;
-        font: 10px arial, san serif;
-        text-align: left;
-        white-space: nowrap;
-        border: 1px solid white;
-        z-index: 10000;
-    }
-
-    .jqsfield {
-        color: white;
-        padding: 5px 5px 8px 5px;
-        font: 10px arial, san serif;
-        text-align: left;
-    }
-    </style>
 </head>
 
-<body>
-    <section id="container">
-        <header class="header black-bg">
-            <div class="sidebar-toggle-box">
-                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-            </div>
-            <a class="navbar-brand " href="#">
-                <img src="../Image/LoGo.JPG" alt="" style="size: 50%;">
-            </a>
-            <div class="nav notify-row" id="top_menu">
-                <ul class="nav top-menu">
-                    <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="indexadmin.html#">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-theme">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">Bạn có 5 bình luận</p>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh10.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Trần Tuấn</span>
-                                        <span class="time">Bây giờ</span>
-                                    </span>
-                                    <span class="message">
-                                        Cao 1m7 mặc được ko ạ?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh11.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Hoàng Nhi</span>
-                                        <span class="time">40 phút trước</span>
-                                    </span>
-                                    <span class="message">
-                                        Chất vải tốt không?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh12.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Nguyễn Anh</span>
-                                        <span class="time">2 giờ trước</span>
-                                    </span>
-                                    <span class="message">
-                                        Set này có hợp không ạ?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="photo"><img alt="avatar" src="../Admin\Image/Anh8.jpeg"></span>
-                                    <span class="subject">
-                                        <span class="from">Nguyễn Nam</span>
-                                        <span class="time">4 giờ trước/span&gt;
-                                        </span>
-                                        <span class="message">
-                                            Cái này sao ạ?
-                                        </span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">Xem tất cả bình luận</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="header_notification_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="indexadmin.html#">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="badge bg-warning">7</span>
-                        </a>
-                        <ul class="dropdown-menu extended notification">
-                            <div class="notify-arrow notify-arrow-yellow"></div>
-                            <li>
-                                <p class="yellow">Bạn có 7 thông báo mới</p>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Máy chủ bị quá
-                                    tải.
-                                    <span class="small italic">4 phút</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-warning"><i class="fa fa-bell"></i></span> Bộ nhớ # 2 Không
-                                    phản hồi.
-                                    <span class="small italic">30 phút</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Truy cập đạt 89%.
-                                    <span class="small italic">2 giờ</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">
-                                    <span class="label label-success"><i class="fa fa-plus"></i></span> Người dùng mới
-                                    đã đăng ký.
-                                    <span class="small italic">3 giờ.</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="indexadmin.html#">Xem tất cả thông báo</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="top-menu pt-3">
-                <ul class="nav pull-right top-menu">
-                    <li><a class="Đăng xuất" href="{{ route('logout') }}">Đăng xuất</a></li>
-                </ul>
-            </div>
-        </header>
-
-        <aside>
-            <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered">
-                        <a href="#"><img src="../Image/IMG_2488.PNG" class="img-circle" width="80"></a>
-                    </p>
-                    <h5 class="centered">Thúy Hải</h5>
-                    <li class="mt">
-                        <a class="" href="indexadmin.html">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Doanh thu</span>
-                        </a>
-                    </li>
-                    <li class="sub-menu dcjq-parent-li">
-                        <a href="javascript:;" class="dcjq-parent active">
-                            <i class="fa fa-th"></i>
-                            <span>Thông tin</span>
-                            <span class="dcjq-icon"></span></a>
-                        <ul class="sub" style="display: block;">
-                            <li><a href="admin/users">Thông tin khách hàng</a></li>
-                            <li><a href="admin/products">Thông tin kho</a></li>
-                            <li><a href="admin/products/create">Thêm sản phẩm mới</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu dcjq-parent-li">
-                        <a href="javascript:;" class="dcjq-parent">
-                            <i class="fa fa-comments-o"></i>
-                            <span>Bình luận</span>
-                            <span class="dcjq-icon"></span></a>
-                        <ul class="sub" style="display: none;">
-                            <li><a href="binhluan.html">Bình luận cá nhân</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-
-        <section id="main-content">
-            <section class="wrapper">
-                <div class="row">
-                    <div class="col-lg-9 main-chart">
-                        <div class="border-head">
-                            <h3>Lượt xem người dùng</h3>
-                        </div>
-                        <div class="custom-bar-chart">
-                            <ul class="y-axis">
-                                <li><span>10.000</span></li>
-                                <li><span>8.000</span></li>
-                                <li><span>6.000</span></li>
-                                <li><span>4.000</span></li>
-                                <li><span>2.000</span></li>
-                                <li><span>0</span></li>
-                            </ul>
-                            <div class="bar">
-                                <div class="title">Chủ nhật</div>
-                                <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip"
-                                    data-placement="top" style="height: 85%;"></div>
-                            </div>
-                            <div class="bar ">
-                                <div class="title">Hai</div>
-                                <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip"
-                                    data-placement="top" style="height: 50%;"></div>
-                            </div>
-                            <div class="bar ">
-                                <div class="title">Ba</div>
-                                <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip"
-                                    data-placement="top" style="height: 60%;"></div>
-                            </div>
-                            <div class="bar ">
-                                <div class="title">Bốn</div>
-                                <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip"
-                                    data-placement="top" style="height: 45%;"></div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">Năm</div>
-                                <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip"
-                                    data-placement="top" style="height: 32%;"></div>
-                            </div>
-                            <div class="bar ">
-                                <div class="title">Sáu</div>
-                                <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip"
-                                    data-placement="top" style="height: 62%;"></div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">Bảy</div>
-                                <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip"
-                                    data-placement="top" style="height: 75%;"></div>
-                            </div>
-                        </div>
-                        <div class="row mt">
-                            <div class="col-md-4 col-sm-4 mb">
-                                <div class="grey-panel pn donut-chart">
-                                    <div class="grey-header">
-                                        <h5>phản hồi từ khách hàng </h5>
-                                    </div>
-                                    <canvas id="serverstatus01" height="150" width="150"
-                                        style="width: 120px; height: 120px;"></canvas>
-                                    <script>
-                                    var doughnutData = [{
-                                        value: 70,
-                                        color: "#FF6B6B"
-                                    }, {
-                                        value: 30,
-                                        color: "#fdfdfd"
-                                    }];
-                                    var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext(
-                                        "2d")).Doughnut(doughnutData);
-                                    </script>
-                                    <div class="row">
-                                        <div class="col-sm-8 col-xs-6 goleft">
-                                            <p>Phản hồi chat<br>98%</p>
-                                        </div>
-                                        <div class="col-sm-4 col-xs-6">
-                                            <h3>81%</h3>
-                                        </div>
+<body class="g-sidenav-show  bg-gray-100">
+    @include('aside')
+    <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+        @include('nav')
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            $53,000
+                                            <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                        </h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 mb">
-                                <div class="darkblue-panel pn">
-                                    <div class="darkblue-header">
-                                        <h5> lượng truy cập</h5>
-                                    </div>
-                                    <canvas id="serverstatus02" height="150" width="150"
-                                        style="width: 120px; height: 120px;"></canvas>
-                                    <script>
-                                    var doughnutData = [{
-                                        value: 80,
-                                        color: "#1c9ca7"
-                                    }, {
-                                        value: 20,
-                                        color: "#f68275"
-                                    }];
-                                    var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext(
-                                        "2d")).Doughnut(doughnutData);
-                                    </script>
-                                    <p>3/6/2021</p>
-                                    <footer>
-                                        <div class="pull-left">
-                                            <h5><i class="fa fa-hdd-o"></i> </h5>
-                                        </div>
-                                        <div class="pull-right">
-                                            <h5>80% so với <br> chỉ tiêu</h5>
-                                        </div>
-                                    </footer>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 mb">
-                                <!-- REVENUE PANEL -->
-                                <div class="green-panel pn">
-                                    <div class="green-header">
-                                        <h5>Doanh thu</h5>
-                                    </div>
-                                    <div class="chart mt">
-                                        <div class="sparkline" data-type="line" data-resize="true" data-height="75"
-                                            data-width="90%" data-line-width="1" data-line-color="#fff"
-                                            data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                            data-spot-radius="4"
-                                            data-data="[200,135,667,333,526,996,564,123,890,464,655]"><canvas
-                                                width="267" height="75"
-                                                style="display: inline-block; width: 267px; height: 75px; vertical-align: top;"></canvas>
-                                        </div>
-                                    </div>
-                                    <p class="mt"><b>150.730.000</b><br>Thu nhập hàng tháng</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 ds">
-                        <div class="donut-main">
-                            <h4>Hoàn thành và tiến độ</h4>
-                            <canvas id="newchart" height="162" width="162"
-                                style="width: 130px; height: 130px;"></canvas>
-                            <script>
-                            var doughnutData = [{
-                                value: 70,
-                                color: "#4ECDC4"
-                            }, {
-                                value: 30,
-                                color: "#fdfdfd"
-                            }];
-                            var myDoughnut = new Chart(document.getElementById("newchart").getContext("2d")).Doughnut(
-                                doughnutData);
-                            </script>
-                        </div>
-                        <div class="panel terques-chart">
-                            <div class="panel-body">
-                                <div class="chart">
-                                    <div class="centered">
-                                        <span>Doanh thu hôm nay</span>
-                                        <strong>3.590.000 | 30%</strong>
-                                    </div>
-                                    <br>
-                                    <div class="sparkline" data-type="line" data-resize="true" data-height="75"
-                                        data-width="90%" data-line-width="1" data-line-color="#fff"
-                                        data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                        data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,564,455]">
-                                        <canvas width="238" height="75"
-                                            style="display: inline-block; width: 238px; height: 75px; vertical-align: top;"></canvas>
+                                <div class="col-4 text-end">
+                                    <div
+                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="" aria-hidden="true"></i>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <h4 class="centered mt">Hoạt động gần đây</h4>
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p>
-                                    <muted>Bây giờ</muted>
-                                    <br>
-                                    <a href="#">Thùy Dung</a>đã mua một món hàng.<br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p>
-                                    <muted>2 phút trước</muted>
-                                    <br>
-                                    <a href="#">Khánh Ngân</a>đã yêu thích một món hàng<br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p>
-                                    <muted>3 phút trước</muted>
-                                    <br>
-                                    <a href="#">Anh Vũ</a>đã theo dõi trang<br>
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
-    </section>
+
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            2,300
+                                            <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div
+                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            +3,462
+                                            <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div
+                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            $103,430
+                                            <span class="text-success text-sm font-weight-bolder">+5%</span>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div
+                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-5 mb-lg-0 mb-4">
+                    <div class="card z-index-2">
+                        <div class="card-body p-3">
+                            <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                                <div class="chart">
+                                    <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
+                                </div>
+                            </div>
+                            <h6 class="ms-2 mt-4 mb-0"> Active Users </h6>
+                            <p class="text-sm ms-2"> (<span class="font-weight-bolder">+23%</span>) than last week </p>
+                            <div class="container border-radius-lg">
+                                <div class="row">
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div
+                                                class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="fas fa-file-alt  opacity-10 d-flex mt-2"></i>
+                                            </div>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Users</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">36K</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div
+                                                class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="fas fa-rocket opacity-10 d-flex mt-2"></i>
+                                            </div>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">2m</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div
+                                                class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i
+                                                    class="fas fa-american-sign-language-interpreting opacity-10 d-flex mt-2 opacity-10"></i>
+                                            </div>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Sales</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">435$</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 py-3 ps-0">
+                                        <div class="d-flex mb-2">
+                                            <div
+                                                class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="fab fa-artstation opacity-10 d-flex mt-2"></i>
+
+                                            </div>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Product</p>
+                                        </div>
+                                        <h4 class="font-weight-bolder">25k</h4>
+                                        <div class="progress w-75">
+                                            <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card z-index-2">
+                        <div class="card-header pb-0">
+                            <h6>Sales overview</h6>
+                            <p class="text-sm">
+                                <i class="fa fa-arrow-up text-success"></i>
+                                <span class="font-weight-bold">4% more</span> in 2021
+                            </p>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="chart">
+                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script class="include" type="text/javascript" src="{{asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
-    <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
-    <script src="{{asset('js/jquery.nicescroll.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/jquery.sparkline.js')}}"></script>
-    <script src="{{asset('js/common-scripts.js')}}"></script>
-    <div id="ascrail2000" class="nicescroll-rails"
-        style="width: 3px; z-index: auto; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; left: 207px; height: 754px; display: none; opacity: 0;">
-        <div
-            style="position: relative; top: 0px; float: right; width: 3px; height: 0px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px;">
+        </div>
+    </main>
+    <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
+        <div class="card shadow-lg ">
+            <div class="card-header pb-0 pt-3 ">
+                <div class="float-start">
+                    <h5 class="mt-3 mb-0">Soft UI Configurator</h5>
+                    <p>See our dashboard options.</p>
+                </div>
+                <div class="float-end mt-4">
+                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <!-- End Toggle Button -->
+            </div>
+            <hr class="horizontal dark my-1">
+            <div class="card-body pt-sm-3 pt-0">
+                <!-- Sidebar Backgrounds -->
+                <div>
+                    <h6 class="mb-0">Sidebar Colors</h6>
+                </div>
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors my-2 text-start">
+                        <span class="badge filter bg-gradient-primary active" data-color="primary"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-dark" data-color="dark"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-info" data-color="info"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-success" data-color="success"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-warning" data-color="warning"
+                            onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-danger" data-color="danger"
+                            onclick="sidebarColor(this)"></span>
+                    </div>
+                </a>
+                <!-- Sidenav Type -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Sidenav Type</h6>
+                    <p class="text-sm">Choose between 2 different sidenav types.</p>
+                </div>
+                <div class="d-flex">
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active" data-class="bg-transparent"
+                        onclick="sidebarType(this)">Transparent</button>
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2" data-class="bg-white"
+                        onclick="sidebarType(this)">White</button>
+                </div>
+                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+                <!-- Navbar Fixed -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Navbar Fixed</h6>
+                </div>
+                <div class="form-check form-switch ps-0">
+                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
+                        onclick="navbarFixed(this)">
+                </div>
+                <hr class="horizontal dark my-sm-4">
+                <div class="w-100 text-center">
+
+
+                </div>
+            </div>
         </div>
     </div>
-    <div id="ascrail2000-hr" class="nicescroll-rails"
-        style="height: 3px; z-index: auto; background: rgb(64, 64, 64); top: 751px; left: 0px; position: fixed; cursor: default; display: none; opacity: 0;">
-        <div
-            style="position: relative; top: 0px; height: 3px; width: 0px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px; left: 0px;">
-        </div>
-    </div>
-    <script type="text/javascript" src="{{asset('js/jquery.gritter.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/gritter-conf.js')}}"></script>
-    <!--script for this page-->
-    <script src="{{asset('js/sparkline-chart.js')}}"></script>
-    <script src="{{asset('js/zabuto_calendar.js')}}"></script>
-    <script type="application/javascript">
-    $(document).ready(function() {
-        $("#date-popover").popover({
-            html: true,
-            trigger: "manual"
-        });
-        $("#date-popover").hide();
-        $("#date-popover").click(function(e) {
-            $(this).hide();
-        });
+    <!--   Core JS Files   -->
+    <script src="{{asset('js/core/popper.min.js')}}">
+    </script>
+    <script src="{{asset('js/core/bootstrap.min2.js')}}"></script>
+    <script src="{{asset('js/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('js/smooth-scrollbar.min.js')}}"></script>
+    <script src="{{asset('js/chartjs.min.js')}}"></script>
+    <script>
+    var ctx = document.getElementById("chart-bars").getContext("2d");
 
-        $("#my-calendar").zabuto_calendar({
-            action: function() {
-                return myDateFunction(this.id, false);
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [{
+                label: "Sales",
+                tension: 0.4,
+                borderWidth: 0,
+                borderRadius: 4,
+                borderSkipped: false,
+                backgroundColor: "#fff",
+                data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+                maxBarThickness: 6
+            }, ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false,
+                }
             },
-            action_nav: function() {
-                return myNavFunction(this.id);
+            interaction: {
+                intersect: false,
+                mode: 'index',
             },
-            ajax: {
-                url: "show_data.php?action=1",
-                modal: true
+            scales: {
+                y: {
+                    grid: {
+                        drawBorder: false,
+                        display: false,
+                        drawOnChartArea: false,
+                        drawTicks: false,
+                    },
+                    ticks: {
+                        suggestedMin: 0,
+                        suggestedMax: 500,
+                        beginAtZero: true,
+                        padding: 15,
+                        font: {
+                            size: 14,
+                            family: "Open Sans",
+                            style: 'normal',
+                            lineHeight: 2
+                        },
+                        color: "#fff"
+                    },
+                },
+                x: {
+                    grid: {
+                        drawBorder: false,
+                        display: false,
+                        drawOnChartArea: false,
+                        drawTicks: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                },
             },
-            legend: [{
-                type: "text",
-                label: "Special event",
-                badge: "00"
-            }, {
-                type: "block",
-                label: "Regular event",
-            }]
-        });
+        },
     });
 
-    function myNavFunction(id) {
-        $("#date-popover").hide();
-        var nav = $("#" + id).data("navigation");
-        var to = $("#" + id).data("to");
-        console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+
+    var ctx2 = document.getElementById("chart-line").getContext("2d");
+
+    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+
+    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
+    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+
+    new Chart(ctx2, {
+        type: "line",
+        data: {
+            labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [{
+                label: "this year ",
+                tension: 0.4,
+                borderWidth: 0,
+                pointRadius: 0,
+                borderColor: "#cb0c9f",
+                borderWidth: 3,
+                backgroundColor: gradientStroke1,
+                fill: true,
+                data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                maxBarThickness: 6
+
+            }, {
+                label: "last year",
+                tension: 0.4,
+                borderWidth: 0,
+                pointRadius: 0,
+                borderColor: "#3A416F",
+                borderWidth: 3,
+                backgroundColor: gradientStroke2,
+                fill: true,
+                data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+                maxBarThickness: 6
+            }, ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false,
+                }
+            },
+            interaction: {
+                intersect: false,
+                mode: 'index',
+            },
+            scales: {
+                y: {
+                    grid: {
+                        drawBorder: false,
+                        display: true,
+                        drawOnChartArea: true,
+                        drawTicks: false,
+                        borderDash: [5, 5]
+                    },
+                    ticks: {
+                        display: true,
+                        padding: 10,
+                        color: '#b2b9bf',
+                        font: {
+                            size: 11,
+                            family: "Open Sans",
+                            style: 'normal',
+                            lineHeight: 2
+                        },
+                    }
+                },
+                x: {
+                    grid: {
+                        drawBorder: false,
+                        display: false,
+                        drawOnChartArea: false,
+                        drawTicks: false,
+                        borderDash: [5, 5]
+                    },
+                    ticks: {
+                        display: true,
+                        color: '#b2b9bf',
+                        padding: 20,
+                        font: {
+                            size: 11,
+                            family: "Open Sans",
+                            style: 'normal',
+                            lineHeight: 2
+                        },
+                    }
+                },
+            },
+        },
+    });
+    </script>
+    <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
     </script>
-
-
-
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="{{asset('js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
 </body>
 
 </html>

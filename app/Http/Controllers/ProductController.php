@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Services\ProductService;
 use App\Models\Carts;
 use App\Models\Products;
+use App\Services\CountCartByUserService;
+use Illuminate\Support\Facades\Auth;
 
 // use App\Http\Controllers\Controller;
 // use App\Models\User;
@@ -26,8 +28,14 @@ class ProductController extends Controller
      public function index()
     {
         $products = Products::orderByDesc('id')->paginate(10);
-        return view('index',compact('products'));
+        $countCart = null;
+         if (Auth::check() && Auth::user()->type == 2) {
+            $countCart = app(CountCartByUserService::class)->handle();
+        }
+        return view('index',compact('products', 'countCart'));
     }
+
+    
      /**
      * Show the profile for a given user.
      *
@@ -53,7 +61,12 @@ class ProductController extends Controller
     public function showDetail($id)
     {
         $product = Products::findOrFail($id);
-        return view('detailsproduct',compact('product'));
+        $products = Products::orderByDesc('id')->paginate(4);
+        $countCart = null;
+        if (Auth::check() && Auth::user()->type == 2) {
+            $countCart = app(CountCartByUserService::class)->handle();
+        }
+        return view('detailsproduct',compact('product','products','countCart'));
     }
 
   
