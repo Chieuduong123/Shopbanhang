@@ -25,32 +25,22 @@
 </head>
 
 <body>
-
     @include('header')
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>Kiểm tra</h4>
-                        <div class="breadcrumb__links">
-                            <a href="./index.html">Trang Chủ</a>
-                            <a href="./shop.html">Cửa hàng</a>
-                            <span>Kiểm tra</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
-
     <!-- Checkout Section Begin -->
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form action="#">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <form action="{{route('order')}}">
                     <div class="row">
                         <div class="col-lg-6 col-md-5">
                             <h6 class="coupon__code">
@@ -60,33 +50,33 @@
                                     <div class="col-lg-6">
                                         <div class="checkout__input">
                                             <p>Họ<span>*</span></p>
-                                            <input type="text">
+                                            <input type="text" name="firstname">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="checkout__input">
                                             <p>Tên<span>*</span></p>
-                                            <input type="text">
+                                            <input name="lastname" type="text">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="checkout__input">
                                     <p>Thành phố/Tỉnh<span>*</span></p>
-                                    <input type="text">
+                                    <input name="city" type=" text">
                                 </div>
                                 <div class="checkout__input">
                                     <p>Huyện/Quận<span>*</span></p>
-                                    <input type="text">
+                                    <input name="district" type="text">
                                 </div>
                                 <div class="checkout__input">
                                     <p>Xã/Phường<span>*</span></p>
-                                    <input type="text">
+                                    <input name="ward" type=" text">
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="checkout__input">
                                             <p>Số điện thoại<span>*</span></p>
-                                            <input type="text">
+                                            <input name="phonenumber" type="text">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -131,7 +121,9 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <button type="submit" class="site-btn">Đặt hàng</button>
+                                <div class="continue__btn">
+                                    <button type="submit" class="site-btn">Đặt hàng</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -157,3 +149,7 @@
 </body>
 
 </html>
+<script type="text/javascript">
+
+
+</script>

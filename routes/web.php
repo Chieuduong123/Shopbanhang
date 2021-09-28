@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController as ControllersProductController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +30,7 @@ Route::get('AnhDuong', function(){
     return "Hello everyone";
 });
 
-// Route::get('/checkout', function () {
-//     return view('checkout');
-// });
+Route::get('user/{id}', [UserController::class, 'profile'])->name('profile');
 
 // Route::get('cart', function(){
 //     return  view('shoppingcart');
@@ -41,7 +40,7 @@ Route::get('AnhDuong', function(){
 // Route::get('/cart/staff/{id}', [ProductController::class, 'getListCart']);
 
  // Route::get('shop', 'App\Http\Controllers\ProductController@currentProduct');
-  Route::get('index', 'App\Http\Controllers\ProductController@index');
+  Route::get('index', 'App\Http\Controllers\ProductController@index')->name('index');
  // Route::get('showdetail', 'App\Http\Controllers\ProductController@showDetail');
 //   Route::get('detail/{id}','App\Http\Controllers\ProductController@viewProduct');
 
@@ -88,13 +87,17 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     // });
 });
 
-Route::get('/shop', [CartController::class, 'index']); 
+Route::get('/shop', [CartController::class, 'index'])->name('shop'); 
 Route::get('cart/show-number', [CartController::class, 'showNumberCart'])->name('show.number.cart');
 Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::delete('cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('order', [OrderController::class, 'order'])->name('order');
+Route::get('/info', [Controller::class, 'info'])->name('info'); 
+Route::get('/blog', [Controller::class, 'blog'])->name('blog'); 
+Route::get('/contact', [Controller::class, 'contact'])->name('contact');
 
 
 

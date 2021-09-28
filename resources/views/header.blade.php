@@ -36,7 +36,8 @@
                     <div class="header__top__right">
                         <div class="header__top__links">
                             @if (Auth::check() && Auth::user()->type == 2)
-                            <span style="color: white;">|&emsp;{{Auth::user()->name}}&emsp;|&emsp;</span>
+                            <span style="color: white;">|&emsp;<a
+                                    href="{{ route('profile',Auth::user()->id)}}">{{Auth::user()->name}}</a>&emsp;|&emsp;</span>
                             <a href="{{ route('logout') }}">Đăng xuất</a>
                             @else
                             <a href="login">Đăng nhập</a>
@@ -58,13 +59,13 @@
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li><a href="index">Trang chủ</a></li>
-                        <li class="active"><a href="shop">Cửa hàng</a></li>
-                        <li><a href="#">Trang </a>
+                        <li><a href="{{route('index')}}">Trang chủ</a></li>
+                        <li class="active"><a href="{{route('shop')}}">Cửa hàng</a></li>
+                        <li><a href="{{route('info')}}">Trang </a>
 
                         </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Liên hệ</a></li>
+                        <li><a href="{{route('blog')}}">Blog</a></li>
+                        <li><a href="{{route('contact')}}">Liên hệ</a></li>
                     </ul>
                 </nav>
             </div>

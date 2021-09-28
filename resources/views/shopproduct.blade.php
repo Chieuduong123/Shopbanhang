@@ -7,7 +7,7 @@
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cửa hàng| Shop giày</title>
+    <title>Cửa hàng | Dream Shop</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -27,21 +27,7 @@
 <body>
     @include('header')
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>Cửa hàng</h4>
-                        <div class="breadcrumb__link">
-                            <a href="index" style="color: black;">Trang Chủ ></a>
-                            <span>Cửa hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- Breadcrumb Section End -->
 
     <!-- Shop Section Begin -->
@@ -50,18 +36,13 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
-                        <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
-                                <button type="submit"><span class="icon_search"></span></button>
-                            </form>
-                        </div>
+
                         <div class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
 
                                 <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Thương hiệu</a>
+                                    <div>
+                                        <a><b>THƯƠNG HIỆU</b></a>
                                     </div>
                                     <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
@@ -81,14 +62,14 @@
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseThree">Giá</a>
+                                    <div>
+                                        <a><b>GIÁ</b></a>
                                     </div>
                                     <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__price">
                                                 <ul>
-                                                    <li><a href="#">&lsaquo;500.000đ</a></li>
+                                                    <li><a href="#">500.000đ</a></li>
                                                     <li><a href="#">500.000-1.000.000đ</a></li>
                                                     <li><a href="#">1.000.000-1.500.000đ</a></li>
                                                     <li><a href="#">1.500.000-2.000.000đ</a></li>
@@ -100,8 +81,8 @@
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Size</a>
+                                    <div>
+                                        <a><b>SIZE</b></a>
                                     </div>
                                     <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
@@ -144,17 +125,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p>Sản phẩm</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="shop__product__option__right">
-                                    <p>Sắp xếp theo</p>
-                                    <select>
-                                        <option value="">Thấp -> Cao</option>
-                                        <option value="">500->2.000.000đ</option>
-                                        <option value="">Trên 2.000.000</option>
-                                    </select>
+                                    <p><b>SẢN PHẨM</b></p>
                                 </div>
                             </div>
                         </div>
@@ -224,3 +195,10 @@
 </body>
 
 </html>
+<script>
+var msg = '{{Session::get('success')}}';
+var exist = '{{Session::has('success')}}';
+if (exist) {
+    alert(msg);
+}
+</script>

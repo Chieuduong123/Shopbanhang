@@ -8,9 +8,7 @@ use App\Models\Products;
 use App\Repositories\CartRepository;
 use App\Services\CartService;
 use App\Services\CountCartByUserService;
-use App\Services\GetCartByConditionsService;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
 {
@@ -42,11 +40,12 @@ class CartController extends Controller
      */
     public function cart()
     { 
-         if (Auth::check() && Auth::user()->type == 1 || ! Auth::check()) {
+        if (Auth::check() && Auth::user()->type == 1 || ! Auth::check()) {
             return redirect('login');
         }
-        $carts = Carts::select('carts.id','img','name', 'quantity', 'price')->join('products', 'products.id', '=' ,'carts.product_id')->where(['user_id' => Auth::user()->id])->get();
-         if (Auth::check() && Auth::user()->type == 2) {
+        $carts = Carts::select('carts.id','img','name', 'quantity', 'price')->join('products', 'products.id', '=' ,'carts.product_id')
+        ->where(['user_id' => Auth::user()->id])->get();
+        if (Auth::check() && Auth::user()->type == 2) {
             $countCart = app(CountCartByUserService::class)->handle();
         }
         return view('shoppingcart',compact('carts','countCart'));

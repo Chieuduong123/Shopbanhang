@@ -28,7 +28,7 @@ class ProductController extends Controller
      public function index()
     {
         $products = Products::orderByDesc('id')->paginate(10);
-         $countCart = null;
+        $countCart = null;
          if (Auth::check() && Auth::user()->type == 2) {
             $countCart = app(CountCartByUserService::class)->handle();
         }
@@ -61,11 +61,12 @@ class ProductController extends Controller
     public function showDetail($id)
     {
         $product = Products::findOrFail($id);
-         $countCart = null;
+        $products = Products::orderByDesc('id')->paginate(4);
+        $countCart = null;
         if (Auth::check() && Auth::user()->type == 2) {
             $countCart = app(CountCartByUserService::class)->handle();
         }
-        return view('detailsproduct',compact('product','countCart'));
+        return view('detailsproduct',compact('product','products','countCart'));
     }
 
   

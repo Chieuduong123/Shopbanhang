@@ -18,7 +18,8 @@ class CheckoutController extends Controller
     {
         $infos = [];
         $totalAll = 0;
-        $carts = Carts::select('name', 'price', 'quantity')->join('products', 'carts.product_id', '=', 'products.id')->where(['user_id' => Auth::user()->id])->get();
+        $carts = Carts::select('name', 'price', 'quantity')->join('products', 'carts.product_id', '=', 'products.id')
+        ->where(['user_id' => Auth::user()->id])->get();
         foreach ($carts as $cart) {
             $total = $cart->price * $cart->quantity;
             $infoDetail = [
