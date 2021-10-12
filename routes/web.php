@@ -70,7 +70,8 @@ Route::group(['middleware' => 'web'], function () {
 });
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::resource('products', ProductController::class);
-        Route::get('users', 'App\Http\Controllers\Admin\UserController@listUsers');
+        Route::get('users', 'App\Http\Controllers\Admin\UserController@listUsers')->name('users');
+        Route::get('orders', 'App\Http\Controllers\Admin\OrderController@listOrders')->name('orders');
         Route::get('/', function () {
             return view('admin.index');
         });

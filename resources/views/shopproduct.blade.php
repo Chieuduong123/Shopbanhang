@@ -10,8 +10,7 @@
     <title>Cửa hàng | Dream Shop</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
@@ -36,10 +35,8 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
-
                         <div class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
-
                                 <div class="card">
                                     <div>
                                         <a><b>THƯƠNG HIỆU</b></a>
@@ -55,7 +52,6 @@
                                                     <li><a href="#">Gucci</a></li>
                                                     <li><a href="#">Converse</a></li>
                                                     <li><a href="#">Vans</a></li>
-
                                                 </ul>
                                             </div>
                                         </div>
@@ -174,7 +170,8 @@
 
                     </div>
                     <div class="d-flex justify-content-center">
-                        {{$products->links("pagination::bootstrap-4")}}</div>
+                        {{$products->links("pagination::bootstrap-4")}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -196,9 +193,11 @@
 
 </html>
 <script>
-var msg = '{{Session::get('success')}}';
-var exist = '{{Session::has('success')}}';
-if (exist) {
-    alert(msg);
-}
+    var msg = '{{Session::get('
+    success ')}}';
+    var exist = '{{Session::has('
+    success ')}}';
+    if (exist) {
+        alert(msg);
+    }
 </script>

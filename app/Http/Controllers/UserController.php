@@ -36,7 +36,7 @@ class UserController extends Controller
 
       public function users()
     {
-        $products = User::orderByDesc('id')->paginate(5);
+        $users = User::orderByDesc('id')->paginate(5);
         return view('admin.users',compact('users'));
     }
     

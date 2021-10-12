@@ -10,8 +10,7 @@
     <title>Dream Shop</title>
 
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
@@ -26,19 +25,32 @@
 <body>
 
     @include('header')
+    <!-- Breadcrumb Section Begin -->
+    <section style="width: 1360px; height: 700px;" class="breadcrumb-blog set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-7 col-md-8 ">
+                    <div>
+                        <h2>Bộ sưu tập Dream Shop</h2>
+                        <p style="color: red; font-size:20px"><b>Uy tín tạo nên chất lượng</b></p>
+                        <a href="# " class="primary-btn">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div style="width: 1360px; height: 700px;" class="hero__items set-bg"
-                data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
+            <div style="width: 1360px; height: 700px;" class="hero__items set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
                 <div class=" container ">
                     <div class="row ">
                         <div class="col-xl-5 col-lg-7 col-md-8 ">
                             <div class="hero__text ">
                                 <h2>Bộ sưu tập mới nhất của addidas</h2>
                                 <p>Uy tín tạo nên chất lượng </p>
-                                <a href="# " class="primary-btn ">Mua ngay</a>
-
+                                <a href="# " class="primary-btn">Mua ngay</a>
                             </div>
                         </div>
                     </div>
@@ -125,15 +137,13 @@
                                         <span>Compare</span></a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('detail', $product->id) }}"><img
-                                            src="{{asset('icon/search.png')}} "></a>
+                                    <a href="{{ route('detail', $product->id) }}"><img src="{{asset('icon/search.png')}} "></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="product__item__text ">
                             <h6>{{$product->name}}</h6>
                             <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart ">+ Thêm vào giỏ hàng</a>
-
                             <h5>{{$product->price}}</h5>
                             <div class="product__color__select ">
                                 <label for="pc-1 ">
@@ -201,18 +211,12 @@
             <div class="row ">
                 <div class="col-lg-8 ">
                     <div class="instagram__pic ">
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/b8085d48a3df90f850f530e2bdf7b5f9.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/78f5ecb064f2f9949cb8e71cb2ca7f9a.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/2ef74a7b628be0c0e4caaabb9ee93d27.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/55fabf1a9a61ca4c411805885585d9cf.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/0b7a3f3b20ae5305a2457d072ec4cd86.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/b6bb87e077ce604b24086b83b664f55b.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/b8085d48a3df90f850f530e2bdf7b5f9.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/78f5ecb064f2f9949cb8e71cb2ca7f9a.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/2ef74a7b628be0c0e4caaabb9ee93d27.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/55fabf1a9a61ca4c411805885585d9cf.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/0b7a3f3b20ae5305a2457d072ec4cd86.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/b6bb87e077ce604b24086b83b664f55b.jpg')}} "></div>
                     </div>
                 </div>
                 <div class="col-lg-4 ">
@@ -240,18 +244,12 @@
                 </div>
                 <div class="col-lg-8 ">
                     <div class="instagram__pic ">
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/e9d976759fdcd93cca175e37ce4683aa.jpg')}}"></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/6790cfbbde981518e299984c615fec63.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/71f6b850de1a69222f6aa892b26d2bb1.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/7ea1fda29f0d75848ba7ca0d289c75cf.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/4aefffbcc12f19595973526c4d2f5969.jpg')}} "></div>
-                        <div class="instagram__pic__item set-bg "
-                            data-setbg="{{asset('img/balenciaga-triple-s-red-black-clear-sole-nam.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/e9d976759fdcd93cca175e37ce4683aa.jpg')}}"></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/6790cfbbde981518e299984c615fec63.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/71f6b850de1a69222f6aa892b26d2bb1.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/7ea1fda29f0d75848ba7ca0d289c75cf.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/4aefffbcc12f19595973526c4d2f5969.jpg')}} "></div>
+                        <div class="instagram__pic__item set-bg " data-setbg="{{asset('img/balenciaga-triple-s-red-black-clear-sole-nam.jpg')}} "></div>
                     </div>
                 </div>
 
@@ -275,8 +273,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 ">
                     <div class="blog__item ">
                         <a href="./blog-details.html">
-                            <div class="blog__item__pic set-bg "
-                                data-setbg="{{asset('img/Remini20210507074406534.jpg')}} "></div>
+                            <div class="blog__item__pic set-bg " data-setbg="{{asset('img/Remini20210507074406534.jpg')}} "></div>
                         </a>
                         <div class="blog__item__text ">
                             <span><img src="{{asset('icon/calendar.png')}} " alt=" "> 16/7/2020</span>
@@ -300,8 +297,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 ">
                     <div class="blog__item ">
                         <a href="./blog-details.html">
-                            <div class="blog__item__pic set-bg "
-                                data-setbg="{{asset('img/Remini20210507074513340.jpg')}} "></div>
+                            <div class="blog__item__pic set-bg " data-setbg="{{asset('img/Remini20210507074513340.jpg')}} "></div>
                         </a>
                         <div class="blog__item__text ">
                             <span><img src="{{asset('icon/calendar.png')}} " alt=" "> 28 /8 2020</span>
