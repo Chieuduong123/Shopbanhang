@@ -9,8 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopping cart | Dream Shop</title>
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
@@ -47,8 +46,7 @@
                                 @foreach($carts as $cart)
                                 <tr>
                                     <td>
-                                        <div class="product__cart__item__pic"><img src="{{ asset('img/'.$cart->img) }}"
-                                                width="150px" height="150px" class="img-responsive" /></div>
+                                        <div class="product__cart__item__pic"><img src="{{ asset('img/'.$cart->img) }}" width="150px" height="150px" class="img-responsive" /></div>
                                     </td>
                                     <td>
                                         <div class="">
@@ -59,9 +57,7 @@
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="">
-                                                <input style="width: 70px; text-align: center;" type="number"
-                                                    value="{{$cart->quantity}}"
-                                                    class="form-control quantity update-cart">
+                                                <input style="width: 70px; text-align: center;" type="number" value="{{$cart->quantity}}" class="form-control quantity update-cart">
                                             </div>
                                         </div>
                                     </td>
@@ -108,5 +104,4 @@
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
 </body>
-
 </html>

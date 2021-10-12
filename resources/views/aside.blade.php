@@ -56,13 +56,24 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="admin/users">
+                <a class="nav-link" href="{{route('users')}}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="far fa-user " style="color: #111;"></i>
 
                     </div>
                     <span class="nav-link-text ms-1">Table Users</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('orders')}}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="far fa-user " style="color: #111;"></i>
+
+                    </div>
+                    <span class="nav-link-text ms-1">Table Orders</span>
                 </a>
             </li>
             <li class="nav-item">

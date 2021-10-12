@@ -92,9 +92,6 @@ class CartController extends Controller
         }
 
     }
-
-  
-
     /**
 
      * Write code on Method
@@ -114,5 +111,6 @@ class CartController extends Controller
         
     }
 
+    
   
 }
