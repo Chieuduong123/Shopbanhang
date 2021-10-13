@@ -28,8 +28,8 @@
     <!-- Shopping Cart Section Begin -->
     <section class="shopping-cart spad">
         <div class="container">
-            <div class="">
-                <div class="col-sm-12">
+            <div class="row">
+                <div class="col-lg-8">
                     <div class="shopping__cart__table">
                         <table>
                             <thead>
@@ -75,14 +75,43 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="">
-
-                        <div class="continue__btn">
-                            <a href="{{route('checkout')}}" class="btn btn-warning">Mua hàng</a>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn">
+                                <a href="" class="btn btn-warning">tiếp tục</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a href="shopping-cart.php"><i class="fa fa-spinner"></i> Cập nhật</a>
+                            </div>
                         </div>
                     </div>
+                   
                 </div>
-                </ul>
+                <div class="col-lg-4">
+                    <div class="cart__discount">
+                        <h6>Mã giảm giá</h6>
+                        <form action="#">
+                            <input type="text" placeholder="Coupon code">
+                            <button type="submit">Áp dụng</button>
+                        </form>
+                    </div>
+                    <div class="cart__total">
+                        <h6>Tổng thanh toán</h6>
+                       
+                        <ul>
+
+                            <li>Tổng giá<span></span>
+                          </li>
+                            <li> Phí vận chuyển<span>50.000đ</span></li>
+                            <li>Khuyến mãi <span>70.000đ</span> </li>
+                            <li>Tổng <span></span></li>
+                      
+                        </ul>
+                        <a href="{{route('checkout')}}" class="primary-btn">Thanh toán</a>
+                    </div>
+                </div>
             </div>
         </div>
         </div>

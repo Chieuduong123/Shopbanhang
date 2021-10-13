@@ -86,41 +86,71 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="continue__btn update__btn">
+                                            <a href="{{route('cart')}}"><i class="fa fa-spinner"></i>Quay lại</a>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div style="width: 650px;" class="checkout__order">
                                 <h4 class="order__title">Đơn hàng</h4>
-                                <div class="checkout__order__products"><b>Sản Phẩm</b><span><b>Tổng</b></span></div>
-                                @foreach( $infos as $info)
+                                {{-- <div class="checkout__order__products"><b>Sản Phẩm</b> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;<b>Số lượng</b><span><b>Tổng</b></span></div>
+                                 @foreach( $infos as $info)
                                 <ul class="checkout__total__products">
-                                    <li>{{$info['name']}}<span>{{$info['total']}}</span></li>
+                                    <li>{{$info['name']}}&emsp; &emsp; &emsp; &emsp; &emsp;{{$info['quantity']}}<span>{{$info['total']}}</span></li>
 
                                 </ul>
-                                @endforeach
+                               
+                               @endforeach --}} 
+                                  <table class="table table-striped">
+                                    <thead>
+                                      <tr >
+                                        <th>Sản phẩm</th>
+                                        <th style="text-align: center">Số lượng</th>
+                                        <th style="text-align: center">Tổng giá</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach( $infos as $info)
+                                      <tr >
+                                        <td>{{$info['name']}}</td>
+                                        <td style="text-align: center">{{$info['quantity']}}</td>
+                                        <td style="text-align: center">{{$info['total']}}</td>
+                                      </tr>
+                                     
+                                      @endforeach
+                                    </tbody>
+                                  </table>
                                 <ul class="checkout__total__all">
                                     <li>Tổng<span>{{$totalAll}}</span></li>
+                                    <li>Phí vận chuyển<span>{{$transport_fee}}</span></li>
+                                    <li>Giảm giá<span>{{$discount}}</span></li>
+                                    <li>Tổng đơn hàng <span>{{$all_total}}</span></li>
                                 </ul>
-                                <div class="checkout__input__checkbox">
-                                    <label for="acc-or">
-                                        Tạo tài khoản
-                                        <input type="checkbox" id="acc-or">
-                                        <span class="checkmark"></span>
+                                <b>Chọn hình thức thanh toán</b>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked>
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                     Thanh toán khi nhận hàng
                                     </label>
-                                </div>
-                                <div class="checkout__input__checkbox">
-                                    <label for="payment">
-                                        Check Payment
-                                        <input type="checkbox" id="payment">
-                                        <span class="checkmark"></span>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        internet banking
                                     </label>
-                                </div>
-                                <div class="checkout__input__checkbox">
-                                    <label for="paypal">
-                                        Paypal
-                                        <input type="checkbox" id="paypal">
-                                        <span class="checkmark"></span>
+                                  </div>
+                                  
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                     visa
                                     </label>
-                                </div>
+                                  </div>
                                 <div class="continue__btn">
                                     <button type="submit" class="site-btn">Đặt hàng</button>
                                 </div>

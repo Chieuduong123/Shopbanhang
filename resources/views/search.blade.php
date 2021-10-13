@@ -7,7 +7,7 @@
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cửa hàng | Dream Shop</title>
+    <title>Tìm kiếm | Dream Shop</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
                         <div class="shop__sidebar__search">
-                            <form action="{{ route('search') }}" method="GET">
+                            <form action="">
                                 <input type="text" placeholder="Search..." name="key">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
@@ -53,13 +53,8 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
-                                                    <li><a href="#">Adidas</a></li>
-                                                    <li><a href="#">Nike</a></li>
-                                                    <li><a href="#">MLB Korea</a></li>
-                                                    <li><a href="#">Balenciaga</a></li>
-                                                    <li><a href="#">Gucci</a></li>
-                                                    <li><a href="#">Converse</a></li>
-                                                    <li><a href="#">Vans</a></li>
+                                                   
+                                                    <li><a href="{{ route('shop') }}">All product</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -129,13 +124,13 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p><b>SẢN PHẨM</b></p>
+                                    <p><b> TÌM THẤY {{count($pro)}} SẢN PHẨM</b></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        @foreach($products as $product)
+                        @foreach($pro as $product)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{asset('img/'.$product->img)}}">
@@ -177,9 +172,7 @@
                         @endforeach
 
                     </div>
-                    <div class="d-flex justify-content-center">
-                        {{$products->links("pagination::bootstrap-4")}}
-                    </div>
+                  
                 </div>
             </div>
         </div>

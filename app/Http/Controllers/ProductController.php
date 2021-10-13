@@ -7,6 +7,8 @@ use App\Models\Carts;
 use App\Models\Products;
 use App\Services\CountCartByUserService;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request;
+
 
 // use App\Http\Controllers\Controller;
 // use App\Models\User;
@@ -68,6 +70,13 @@ class ProductController extends Controller
         }
         return view('detailsproduct',compact('product','products','countCart'));
     }
+    // public function search_pro(Request $req)
+    // {
+    //    $pro = Products::where('name','like','%'.$req->key.'%')
+    //                     ->orWhere('price',$req->key)
+    //                     ->get();
+    //                     return view('search',compact('pro'));
+    // }
 
   
 }

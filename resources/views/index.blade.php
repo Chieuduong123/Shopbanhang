@@ -26,7 +26,7 @@
 
     @include('header')
     <!-- Breadcrumb Section Begin -->
-    <section style="width: 1360px; height: 700px;" class="breadcrumb-blog set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
+    <section style="height: 700px;" class="breadcrumb-blog set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-7 col-md-8 ">
@@ -72,6 +72,7 @@
                         </a>
                         <div class="banner__item__text ">
                             <h2>Mẫu mới nhất của converst</h2>
+                            
                             <a href="#">Mua ngay</a>
                         </div>
 
@@ -124,7 +125,7 @@
             </div>
             <div class="row product__filter ">
                 @foreach($products as $product)
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals ">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item ">
                         <div class="product__item__pic set-bg " data-setbg="{{asset('img/'.$product->img)}}">
                             <span class="label ">New</span>
@@ -143,6 +144,15 @@
                         </div>
                         <div class="product__item__text ">
                             <h6>{{$product->name}}</h6>
+                            <div class="product__details__text">
+                            <div class="rating">
+                                <i class="fa fa-star" style="color:f7941d"></i>
+                                <i class="fa fa-star" style="color:f7941d"></i>
+                                <i class="fa fa-star" style="color:f7941d"></i>
+                                <i class="fa fa-star" style="color:f7941d"></i>
+                                <i class="fa fa-star-o"style="color:f7941d"></i>
+                                <span> - 50 Reviews</span>
+                            </div></div>
                             <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart ">+ Thêm vào giỏ hàng</a>
                             <h5>{{$product->price}}</h5>
                             <div class="product__color__select ">

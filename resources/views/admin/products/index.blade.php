@@ -89,7 +89,8 @@
                                             <td >
                                                 <div class="d-flex px-2 py-1">
                                                     <div style="width:250px; word-wrap:break-word;" class="d-flex flex-column justify-content-center">
-                                                            <p style="text-overflow: clip;max-width:250px; word-wrap:break-word !important;">{{$product->description}}</p>
+                                                            <p style="width: 300px;overflow: hidden; white-space: nowrap;  text-overflow: ellipsis;">{{$product->description}}</p>
+                                                            {{-- text-overflow: clip;max-width:250px; word-wrap:break-word !important; --}}
                                                     </div>
                                                 </div>
                                             </td>

@@ -99,6 +99,8 @@ Route::get('order', [OrderController::class, 'order'])->name('order');
 Route::get('/info', [Controller::class, 'info'])->name('info'); 
 Route::get('/blog', [Controller::class, 'blog'])->name('blog'); 
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
+Route::get('/search', [Controller::class, 'search_pro'])->name('search');
+
 
 
 

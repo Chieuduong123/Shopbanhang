@@ -7,7 +7,7 @@ use App\Http\Requests\Admin\PostProductRequest;
 use App\Http\Requests\Admin\UpdateProductRequest;
 use App\Models\Products;
 use App\Services\Admin\ProductService;
-
+use Symfony\Component\HttpFoundation\Request;
 
 class ProductController extends Controller
 {
@@ -67,6 +67,7 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
+    
   
        
     

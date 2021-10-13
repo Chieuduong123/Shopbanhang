@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 </head> <!-- Header Section Begin -->
 <header class="header">
     <div class="header__top">
@@ -60,8 +62,8 @@
                 <nav class="header__menu mobile-menu">
                     <ul>
                         <li><a href="{{route('index')}}">Trang chủ</a></li>
-                        <li class="active"><a href="{{route('shop')}}">Cửa hàng</a></li>
-                        <li><a href="{{route('info')}}">Trang </a>
+                        <li class=""><a href="{{route('shop')}}">Cửa hàng</a></li>
+                        <li><a href="{{route('info')}}">About us </a>
 
                         </li>
                         <li><a href="{{route('blog')}}">Blog</a></li>
