@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController as ControllersProductController;
@@ -72,8 +73,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::resource('products', ProductController::class);
         Route::get('users', 'App\Http\Controllers\Admin\UserController@listUsers')->name('users');
         Route::get('orders', 'App\Http\Controllers\Admin\OrderController@listOrders')->name('orders');
-        Route::get('/', function () {
-            return view('admin.index');
+        Route::get('conts', 'App\Http\Controllers\Admin\MessageController@listConts')->name('conts');
+        Route::get('/', 'App\Http\Controllers\Admin\ProductController@admin')->name('/');
+        // Route::get('/', function () {
+        //     return view('admin.index');
         });
         // Route::get('/create', 'App\Http\Controllers\Admin\ProductController@create');
         
@@ -86,8 +89,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     // Route::get('/users', function () {
     //     // Matches The "/admin/users" URL
     // });
-});
-
+// });
+Route::get('conts', 'App\Http\Controllers\Admin\MessageController@listConts')->name('conts');
 Route::get('/shop', [CartController::class, 'index'])->name('shop'); 
 Route::get('cart/show-number', [CartController::class, 'showNumberCart'])->name('show.number.cart');
 Route::get('cart', [CartController::class, 'cart'])->name('cart');
@@ -98,7 +101,8 @@ Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('order', [OrderController::class, 'order'])->name('order');
 Route::get('/info', [Controller::class, 'info'])->name('info'); 
 Route::get('/blog', [Controller::class, 'blog'])->name('blog'); 
-Route::get('/contact', [Controller::class, 'contact'])->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/search', [Controller::class, 'search_pro'])->name('search');
 
 

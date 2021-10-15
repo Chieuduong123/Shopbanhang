@@ -7,6 +7,7 @@ use App\Models\User;
 
  use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserRequest;
+use App\Models\Contacts;
 
 // use App\Models\User;
 
@@ -23,7 +24,8 @@ class UserController extends Controller
     
       public function listUsers()
     {
+      $conts = Contacts::orderByDesc('id')->paginate(3);
        $users = User::orderByDesc('id')->paginate(5);
-       return view('admin.users',compact('users'));
+       return view('admin.users',compact('users', 'conts'));
     }
 }
