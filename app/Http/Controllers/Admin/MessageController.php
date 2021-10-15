@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contacts;
-use App\Models\Orders;
 
 // use App\Models\User;
 
-class OrderController extends Controller
+class MessageController extends Controller
 {
     
 
@@ -18,10 +17,9 @@ class OrderController extends Controller
      * @return \Illuminate\View\View
      */
     
-      public function listOrders()
+      public function listConts()
     {
-      $conts = Contacts::orderByDesc('id')->paginate(3);
-       $orders = Orders::orderByDesc('id')->paginate(5);
-       return view('admin.order',compact('orders','conts'));
+       $conts = Contacts::orderByDesc('id')->paginate(3);
+       return view('admin.nav',compact('conts'));
     }
 }

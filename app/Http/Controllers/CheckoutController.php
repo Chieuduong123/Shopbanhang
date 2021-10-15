@@ -14,27 +14,6 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\View\View
      */
-    // public function index()
-    // {
-    //     $infos = [];
-    //     $totalAll = 0;
-    //     $carts = Carts::select('name', 'price', 'quantity')->join('products', 'carts.product_id', '=', 'products.id')
-    //     ->where(['user_id' => Auth::user()->id])->get();
-    //     foreach ($carts as $cart) {
-    //         $total = $cart->price * $cart->quantity;
-    //         $infoDetail = [
-    //             'name' => $cart->name,
-    //             'total' => $total
-    //         ];
-    //         $totalAll +=  $infoDetail['total'];
-    //         $infos[] = $infoDetail;
-    //     }
-    //      $countCart = null;
-    //      if (Auth::check() && Auth::user()->type == 2) {
-    //         $countCart = app(CountCartByUserService::class)->handle();
-    //     }
-    //     return view('checkout',compact('infos', 'totalAll', 'countCart'));
-    // }
     public function index()
     {
         $infos = [];
@@ -72,46 +51,5 @@ class CheckoutController extends Controller
         }
         return view('checkout',compact('infos', 'totalAll', 'countCart','all_total','discount','transport_fee'));
     }
-    // public function cart_check()
-    // {
-    //     $infos = [];
-    //     $totalAll = 0;
-    //     $transport_fee = 30000;
-    //     $discount =0;
-    //     $all_total=0;
-       
-    //     $carts = Carts::select('name', 'price', 'quantity')->join('products', 'carts.product_id', '=', 'products.id')
-    //     ->where(['user_id' => Auth::user()->id])->get();
-    //     foreach ($carts as $cart) {
-    //         $total = $cart->price * $cart->quantity;
-    //         $infoDetail = [
-    //             'name' => $cart->name,
-    //             'total' => $total,
-    //             'quantity'=> $cart->quantity
-    //         ];
-    //         $totalAll +=  $infoDetail['total'];
-    //         $infos[] = $infoDetail;
-             
-    //     if ($cart->price >2000000) {
-    //         $discount = 150000;
-    //     }else if($cart->price >1000000){
-    //         $discount= 50000;
-    //     }else {
-    //         $discount= 0;
-
-    //     }
-    //       $all_total = $totalAll - $transport_fee - $discount;
-    //     }
-    //      $countCart = null;
-       
-    //     if (Auth::check() && Auth::user()->type == 2) {
-    //         $countCart = app(CountCartByUserService::class)->handle();
-    //     }
-    //     return view('cart',compact('infos', 'totalAll', 'countCart','all_total','discount','transport_fee'));
-    // }
-  
-
-
-  
   
 }

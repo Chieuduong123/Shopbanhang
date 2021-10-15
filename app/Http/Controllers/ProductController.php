@@ -70,13 +70,7 @@ class ProductController extends Controller
         }
         return view('detailsproduct',compact('product','products','countCart'));
     }
-    // public function search_pro(Request $req)
-    // {
-    //    $pro = Products::where('name','like','%'.$req->key.'%')
-    //                     ->orWhere('price',$req->key)
-    //                     ->get();
-    //                     return view('search',compact('pro'));
-    // }
+ 
 
   
 }

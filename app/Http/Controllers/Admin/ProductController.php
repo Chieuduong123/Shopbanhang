@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostProductRequest;
 use App\Http\Requests\Admin\UpdateProductRequest;
+use App\Models\Contacts;
 use App\Models\Products;
 use App\Services\Admin\ProductService;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,13 +13,22 @@ use Symfony\Component\HttpFoundation\Request;
 class ProductController extends Controller
 {
     public function index() {
+        $conts = Contacts::orderByDesc('id')->paginate(3);
          $products = Products::latest()->paginate(5);
     
-        return view('admin.products.index',compact('products'));
+        return view('admin.products.index',compact('products', 'conts'));
+
+    }
+    public function admin() {
+        $conts = Contacts::orderByDesc('id')->paginate(3);
+         $products = Products::latest()->paginate(5);
+    
+        return view('admin.index',compact('products', 'conts'));
 
     }
     public function create() {
-        return view('admin/products/create');
+        $conts = Contacts::orderByDesc('id')->paginate(3);
+        return view('admin/products/create',compact('conts'));
     }
     public function store(PostProductRequest $request) {
         
@@ -37,8 +47,8 @@ class ProductController extends Controller
      */
     public function edit(Products $product)
     {
-
-        return view('admin.products.edit',compact('product'));
+        $conts = Contacts::orderByDesc('id')->paginate(3);
+        return view('admin.products.edit',compact('product', 'conts'));
     }
 
     /**
