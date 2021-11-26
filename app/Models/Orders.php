@@ -19,4 +19,8 @@ class Orders extends Model
         'ward',
         'phonenumber',
     ];
+    public function cart()
+    {
+        return $this->belongsTo(Carts::class);
+    }
 }

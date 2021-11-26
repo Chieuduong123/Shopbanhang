@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carts;
+use App\Models\Orders;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Repositories\CartRepository;
@@ -39,21 +40,22 @@ class CartController extends Controller
      * @return response()
      */
     public function cart()
-    { 
-        if (Auth::check() && Auth::user()->type == 1 || ! Auth::check()) {
+    {
+        if (Auth::check() && Auth::user()->type == 1 || !Auth::check()) {
             return redirect('login');
         }
-        $carts = Carts::select('carts.id','img','name', 'quantity', 'price')->join('products', 'products.id', '=' ,'carts.product_id')
+        $carts = Carts::select('carts.id', 'img', 'name', 'quantity', 'price')
+        ->join('products', 'products.id', '=', 'carts.product_id')
         ->where(['user_id' => Auth::user()->id])->get();
         if (Auth::check() && Auth::user()->type == 2) {
             $countCart = app(CountCartByUserService::class)->handle();
         }
-        return view('shoppingcart',compact('carts','countCart'));
+        return view('shoppingcart', compact('carts', 'countCart'));
     }
-    
+
     public function addToCart($id)
     {
-        if (Auth::check() && Auth::user()->type == 1 || ! Auth::check()) {
+        if (Auth::check() && Auth::user()->type == 1 || !Auth::check()) {
             return redirect('login');
         }
         $cart = app(CartService::class)->handle($id);
@@ -70,10 +72,9 @@ class CartController extends Controller
         $cart->quantity++;
         $cart->update(['quantity' => $cart->quantity]);
         $countCart = app(CountCartByUserService::class)->handle();
-        return redirect()->back()->with(['countCart' => $countCart]); 
-    
+        return redirect()->back()->with(['countCart' => $countCart]);
     }
-     
+
 
     /**
      * Write code on MetChod
@@ -83,14 +84,13 @@ class CartController extends Controller
 
     public function update(Request $request)
     {
-        if($request->id && $request->quatity){
+        if ($request->id && $request->quatity) {
 
             $cart = session()->get('cart');
             $cart[$request->id]["quatity"] = $request->quatity;
             session()->put('cart', $cart);
             session()->flash('success', 'Cart updated successfully');
         }
-
     }
     /**
 
@@ -104,13 +104,20 @@ class CartController extends Controller
 
     public function destroy($id)
     {
-    
+
         $cart = Carts::findOrFail($id);
         $cart->delete();
-            return redirect()->route('cart')->with('success', 'Product removed to cart successfully!');
-        
+        return redirect()->route('cart')->with('success', 'Product removed to cart successfully!');
     }
 
-    
-  
+    public function detail()
+    {
+        if (Auth::check() && Auth::user()->type == 1 || !Auth::check()) {
+            return redirect('login');
+        }
+        if (Auth::check() && Auth::user()->type == 2) {
+            $countCart = app(CountCartByUserService::class)->handle();
+        }
+        return view('detailsorder', compact('countCart'));
+    }
 }
