@@ -92,7 +92,6 @@
                                             <a href="{{route('cart')}}"><i class="fa fa-spinner"></i>Quay lại</a>
                                         </div>
                                     </div>
-                                   
                                 </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -102,9 +101,7 @@
                                  @foreach( $infos as $info)
                                 <ul class="checkout__total__products">
                                     <li>{{$info['name']}}&emsp; &emsp; &emsp; &emsp; &emsp;{{$info['quantity']}}<span>{{$info['total']}}</span></li>
-
                                 </ul>
-                               
                                @endforeach --}} 
                                   <table class="table table-striped">
                                     <thead>
@@ -180,6 +177,4 @@
 
 </html>
 <script type="text/javascript">
-
-
 </script>

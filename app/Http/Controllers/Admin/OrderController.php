@@ -24,4 +24,5 @@ class OrderController extends Controller
        $orders = Orders::orderByDesc('id')->paginate(5);
        return view('admin.order',compact('orders','conts'));
     }
+   
 }

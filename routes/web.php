@@ -69,6 +69,8 @@ Route::group(['middleware' => 'web'], function () {
         'uses' => 'App\Http\Controllers\Auth\LogoutController@getLogout'
     ]);
 });
+
+
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::resource('products', ProductController::class);
         Route::get('users', 'App\Http\Controllers\Admin\UserController@listUsers')->name('users');
@@ -104,6 +106,7 @@ Route::get('/blog', [Controller::class, 'blog'])->name('blog');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/search', [Controller::class, 'search_pro'])->name('search');
+Route::get('detail', [OrderController::class, 'canYouLike'])->name('detail');
 
 
 

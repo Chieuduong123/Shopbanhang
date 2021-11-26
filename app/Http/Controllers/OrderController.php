@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequests;
+use App\Models\Products;
+use App\Services\CountCartByUserService;
 use App\Services\OrderService;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -16,8 +19,18 @@ class OrderController extends Controller
     public function order(OrderRequests $request)
     {
         app(OrderService::class)->create($request);
-        return redirect()->route('shop')
+        return redirect()->route('detail')
                         ->with('success','Order successfully.');
+    }
+
+    public function canYouLike()
+    {
+        $products = Products::orderByDesc('id')->paginate(4);
+        $countCart = null;
+        if (Auth::check() && Auth::user()->type == 2) {
+            $countCart = app(CountCartByUserService::class)->handle();
+        }
+        return view('detailsorder',compact('products','countCart'));
     }
 
   

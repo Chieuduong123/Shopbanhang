@@ -57,7 +57,7 @@
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="">
-                                                <input style="width: 70px; text-align: center;" type="number" value="{{$cart->quantity}}" class="form-control quantity update-cart">
+                                                <input style="width: 70px; text-align: center;" type="number" min="0" value="{{$cart->quantity}}" class="form-control quantity update-cart">
                                             </div>
                                         </div>
                                     </td>

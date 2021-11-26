@@ -11,9 +11,13 @@
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome-animation@1.1.1/font-awesome-animation.scss" rel="stylesheet" />
+   
     <!-- Nucleo Icons -->
     <link href="{{asset('css/nucleo-icons.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/ring.css')}}" rel="stylesheet" />
     <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome-animation.min.css">
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
@@ -51,12 +55,13 @@
                 </li>
                 <li class="nav-item px-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0">
-                        <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                        <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
+                        <span class="sr-only">Loading...</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-bell cursor-pointer"></i>
+                    <i class='fa fa-bell faa-ring animated fa-2x'></i>
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                         <li class="mb-2">
@@ -80,7 +85,8 @@
                             @endforeach
                         </li>
                         <div class="d-flex justify-content-center">
-                                    {{$conts->links("pagination::bootstrap-4")}}</div>
+                            {{$conts->links("pagination::bootstrap-4")}}
+                        </div>
                     </ul>
                 </li>
             </ul>
