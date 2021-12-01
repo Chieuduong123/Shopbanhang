@@ -57,7 +57,7 @@
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="">
-                                                <input style="width: 70px; text-align: center;" type="number" min="0" value="{{$cart->quantity}}" class="form-control quantity update-cart">
+                                                <input style="width: 70px; text-align: center;" type="number" min="1" value="{{$cart->quantity}}" class="form-control quantity update-cart">
                                             </div>
                                         </div>
                                     </td>
@@ -78,12 +78,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a href="" class="btn btn-warning">tiếp tục</a>
+                                <a href="{{route('shop')}}" class="btn btn-warning">tiếp tục</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn update__btn">
-                                <a href="shopping-cart.php"><i class="fa fa-spinner"></i> Cập nhật</a>
+                                <a href="{{route('cart')}}"><i class="fa fa-spinner"></i> Cập nhật</a>
                             </div>
                         </div>
                     </div>
@@ -102,11 +102,10 @@
                        
                         <ul>
 
-                            <li>Tổng giá<span></span>
-                          </li>
-                            <li> Phí vận chuyển<span>50.000đ</span></li>
-                            <li>Khuyến mãi <span>70.000đ</span> </li>
-                            <li>Tổng <span></span></li>
+                            <li>Tổng giá<span> {{$totalAll}} vnđ </span> </li>
+                            <li> Phí vận chuyển<span>{{$transport_fee}} vnđ </span> </li>
+                            <li>Khuyến mãi <span>{{$discount}} vnđ </span>  </li>
+                            <li>Tổng <span>{{$all_total}} vnđ </span> </li>
                       
                         </ul>
                         <a href="{{route('checkout')}}" class="primary-btn">Thanh toán</a>

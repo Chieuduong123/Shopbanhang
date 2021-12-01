@@ -19,7 +19,7 @@ class OrderController extends Controller
     public function order(OrderRequests $request)
     {
         app(OrderService::class)->create($request);
-        return redirect()->route('detail')
+        return redirect()->route('details')
                         ->with('success','Order successfully.');
     }
 

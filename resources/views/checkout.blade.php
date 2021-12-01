@@ -123,10 +123,10 @@
                                     </tbody>
                                   </table>
                                 <ul class="checkout__total__all">
-                                    <li>Tổng<span>{{$totalAll}}</span></li>
-                                    <li>Phí vận chuyển<span>{{$transport_fee}}</span></li>
-                                    <li>Giảm giá<span>{{$discount}}</span></li>
-                                    <li>Tổng đơn hàng <span>{{$all_total}}</span></li>
+                                    <li>Tổng<span>{{$totalAll}} vnđ </span></li>
+                                    <li>Phí vận chuyển<span>{{$transport_fee}} vnđ </span></li>
+                                    <li>Giảm giá<span>{{$discount}} vnđ </span></li>
+                                    <li>Tổng đơn hàng <span>{{$all_total}} vnđ </span></li>
                                 </ul>
                                 <b>Chọn hình thức thanh toán</b>
                                 <div class="form-check">

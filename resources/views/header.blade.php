@@ -55,7 +55,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="index"><img src="{{asset('img/LoGo.JPG')}}" alt=""></a>
+                    <a href=""><img src="{{asset('img/DR1.PNG')}}" alt="" style="margin-top: -33px;  width: 120px;"></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">

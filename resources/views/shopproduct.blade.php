@@ -159,7 +159,7 @@
                                         Thêm vào giỏ
                                         hàng
                                     </a>
-                                    <h5>{{$product->price}}</h5>
+                                    <h5>{{$product->price}} vnđ</h5>
                                     <div class="product__color__select">
                                         <label for="pc-4">
                                             <input type="radio" id="pc-4">

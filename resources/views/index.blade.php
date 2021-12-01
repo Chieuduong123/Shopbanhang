@@ -26,8 +26,9 @@
 
     @include('header')
     <!-- Breadcrumb Section Begin -->
-    <section style="height: 700px;" class="breadcrumb-blog set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
-        <div class="container">
+    {{-- <section style="height: 700px;" class="breadcrumb-blog set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}"> --}}
+        <section style="height: 600px;" class="breadcrumb-blog set-bg" data-setbg="{{asset('img/banner2.png')}}">
+        {{-- <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-7 col-md-8 ">
                     <div>
@@ -37,13 +38,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
     <!-- Breadcrumb Section End -->
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div style="width: 1360px; height: 700px;" class="hero__items set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}">
+            {{-- <div style="width: 1360px; height: 700px;" class="hero__items set-bg" data-setbg="{{asset('https://www.cleanipedia.com/images/v2/e69017016a0bc457b3a16b47fd6334bb-1800w-1200h.jpg')}}"> --}}
+                <div style="width: 1360px; height: 600px;" class="hero__items set-bg" data-setbg="{{asset('img/banner2.png')}}" >
                 <div class=" container ">
                     <div class="row ">
                         <div class="col-xl-5 col-lg-7 col-md-8 ">
@@ -150,11 +152,11 @@
                                 <i class="fa fa-star" style="color:f7941d"></i>
                                 <i class="fa fa-star" style="color:f7941d"></i>
                                 <i class="fa fa-star" style="color:f7941d"></i>
-                                <i class="fa fa-star-o"style="color:f7941d"></i>
+                                <i class="fa fa-star"style="color:f7941d"></i>
                                 <span> - 50 Reviews</span>
                             </div></div>
                             <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart ">+ Thêm vào giỏ hàng</a>
-                            <h5>{{$product->price}}</h5>
+                            <h5>{{$product->price}} vnđ</h5>
                             <div class="product__color__select ">
                                 <label for="pc-1 ">
                                     <input type="radio " id="pc-1 ">

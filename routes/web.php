@@ -106,7 +106,7 @@ Route::get('/blog', [Controller::class, 'blog'])->name('blog');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/search', [Controller::class, 'search_pro'])->name('search');
-Route::get('detail', [OrderController::class, 'canYouLike'])->name('detail');
+Route::get('details', [OrderController::class, 'canYouLike'])->name('details');
 
 
 

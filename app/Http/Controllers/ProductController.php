@@ -29,7 +29,7 @@ class ProductController extends Controller
 
      public function index()
     {
-        $products = Products::orderByDesc('id')->paginate(10);
+        $products = Products::orderByDesc('id')->paginate(12);
         $countCart = null;
          if (Auth::check() && Auth::user()->type == 2) {
             $countCart = app(CountCartByUserService::class)->handle();

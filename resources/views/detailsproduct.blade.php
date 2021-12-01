@@ -82,19 +82,27 @@
                         </div>
 
                     </div>
+                    <form action="{{ route('add.to.cart', $product->id) }}">
                     <div class="product__details__cart__option">
                       
-                            <div class="quantity">
+                            {{-- <div class="quantity">
                                 <div class="">
                                     <input type="number" style="width: 50px; text-align: center;" value="1">
                                 </div>
-                            </div>
-                       <a href="{{ route('add.to.cart', $product->id) }}"><button type="submit" name="submit_cart" class="primary-btn" >Thêm vào giỏ hàng</button></a> 
+                            </div> --}}
+                            <div class="quantity">
+                                <div class="">
+                                    <input type="number" value="1" min="1" name="quantity" style="width: 80px; height: 45px; text-align: center;">
+                                </div>
+                            </div> 
+                            {{-- <input name="productID_hidden" type="hidden" value="{{$product->id}}"> --}}
+
+                       <a href=""><button type="submit" name="submit_cart" class="primary-btn" >Thêm vào giỏ hàng</button></a> 
                        
                        
 
                     </div>
-
+                </form>
                     <div class="product__details__last__option">
                         <h5><span>Đảm bảo thanh toán an toàn</span></h5>
                         <img src="{{asset('img/payment.png')}}" alt="" style="width: 50%;">
@@ -151,7 +159,7 @@
                             <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart">+ Thêm vào giỏ
                                 hàng</a>
 
-                            <h5>{{$product->price}}</h5>
+                            <h5>{{$product->price}} vnđ</h5>
                             <div class="product__color__select">
                                 <label for="pc-1">
                                     <input type="radio" id="pc-1">

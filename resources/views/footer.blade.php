@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 ">
                     <div class="footer__about ">
                         <div class="footer__logo ">
-                            <a href="# "><img src="{{asset('img/LoGo.JPG')}} " alt=" "></a>
+                            <a href="# "><img src="{{asset('img/DR.PNG')}} " alt=" " style="width: 120px; margin-top: -20px"></a>
                         </div>
                         <p>Lấy khách hàng làm trung tâm, tạo cảm hứng thiết kế</p>
                         <a href="# "><img src="{{asset('img/payment.png')}} " alt=" "></a>
