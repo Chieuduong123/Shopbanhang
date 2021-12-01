@@ -41,36 +41,47 @@ class CartController extends Controller
      */
     public function cart()
     {
+        //     if (Auth::check() && Auth::user()->type == 1 || !Auth::check()) {
+        //         return redirect('login');
+        //     }
+        //     $carts = Carts::select('carts.id', 'img', 'name', 'quantity', 'price')
+        //     ->join('products', 'products.id', '=', 'carts.product_id')
+        //     ->where(['user_id' => Auth::user()->id])->get();
+        //     if (Auth::check() && Auth::user()->type == 2) {
+        //         $countCart = app(CountCartByUserService::class)->handle();
+        //     }
+        //     return view('shoppingcart', compact('carts', 'countCart'));
+        // }
 
 
         $totalAll = 0;
         $transport_fee = 30000;
-        $discount =0;
-        $all_total=0;
+        $discount = 0;
+        $all_total = 0;
 
         if (Auth::check() && Auth::user()->type == 1 || !Auth::check()) {
             return redirect('login');
         }
 
-        
+
         $carts = Carts::select('carts.id', 'img', 'name', 'quantity', 'price')
-        ->join('products', 'products.id', '=', 'carts.product_id')
-        ->where(['user_id' => Auth::user()->id])->get();
+            ->join('products', 'products.id', '=', 'carts.product_id')
+            ->where(['user_id' => Auth::user()->id])->get();
 
         foreach ($carts as $cart) {
             $total = $cart->price * $cart->quantity;
             $infoDetail = [
-            'name' => $cart->name,
-            'total' => $total,
-            'quantity'=> $cart->quantity
-        ];
+                'name' => $cart->name,
+                'total' => $total,
+                'quantity' => $cart->quantity
+            ];
             $totalAll +=  $infoDetail['total'];
-            if ($totalAll >2000000) {
+            if ($totalAll > 2000000) {
                 $discount = 150000;
-            } elseif ($totalAll >1000000) {
-                $discount= 50000;
+            } elseif ($totalAll > 1000000) {
+                $discount = 50000;
             } else {
-                $discount= 0;
+                $discount = 0;
             }
             $all_total = $totalAll - $transport_fee - $discount;
         }
@@ -79,29 +90,24 @@ class CartController extends Controller
         }
 
 
-        return view('shoppingcart', compact('carts', 'countCart','totalAll','all_total','discount','transport_fee'));
+        return view('shoppingcart', compact('carts', 'countCart', 'totalAll', 'all_total', 'discount', 'transport_fee'));
     }
 
 
 
-    public function addToCart(Request $request ,$id)
+    public function addToCart(Request $request, $id)
     {
         if (Auth::check() && Auth::user()->type == 1 || !Auth::check()) {
             return redirect('login');
         }
-       
+
         $cart = app(CartService::class)->handle($id);
         if (!$cart) {
-           
-           
             $cart = [
-              
-                // "quantity" => 1,
                 'user_id' =>  Auth::user()->id,
                 'product_id' => $id,
                 'quantity' => $request['quantity']
             ];
-            
             app(CartRepository::class)->store($cart);
             $countCart = app(CountCartByUserService::class)->handle();
             return redirect()->back()->with(['countCart' => $countCart]);
@@ -156,5 +162,28 @@ class CartController extends Controller
             $countCart = app(CountCartByUserService::class)->handle();
         }
         return view('detailsorder', compact('countCart'));
+    }
+
+
+    public function addCart($id)
+    {
+        if (Auth::check() && Auth::user()->type == 1 || !Auth::check()) {
+            return redirect('login');
+        }
+        $cart = app(CartService::class)->handle($id);
+        if (!$cart) {
+            $cart = [
+                'user_id' =>  Auth::user()->id,
+                'product_id' => $id,
+                'quantity' => 1,
+            ];
+            app(CartRepository::class)->store($cart);
+            $countCart = app(CountCartByUserService::class)->handle();
+            return redirect()->back()->with(['countCart' => $countCart]);
+        }
+        $cart->quantity++;
+        $cart->update(['quantity' => $cart->quantity]);
+        $countCart = app(CountCartByUserService::class)->handle();
+        return redirect()->back()->with(['countCart' => $countCart]);
     }
 }

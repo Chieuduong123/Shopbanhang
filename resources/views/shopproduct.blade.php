@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>{{$product->name}}</h6>
-                                    <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart" role="button">+
+                                    <a href="{{ route('add.cart', $product->id) }}" class="add-cart" role="button">+
                                         Thêm vào giỏ
                                         hàng
                                     </a>
