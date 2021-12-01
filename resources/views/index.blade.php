@@ -155,7 +155,7 @@
                                 <i class="fa fa-star"style="color:f7941d"></i>
                                 <span> - 50 Reviews</span>
                             </div></div>
-                            <a href="{{ route('add.to.cart', $product->id) }}" class="add-cart ">+ Thêm vào giỏ hàng</a>
+                            <a href="{{ route('add.cart', $product->id) }}" class="add-cart ">+ Thêm vào giỏ hàng</a>
                             <h5>{{$product->price}} vnđ</h5>
                             <div class="product__color__select ">
                                 <label for="pc-1 ">

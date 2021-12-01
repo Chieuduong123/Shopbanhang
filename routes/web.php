@@ -107,6 +107,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/search', [Controller::class, 'search_pro'])->name('search');
 Route::get('details', [OrderController::class, 'canYouLike'])->name('details');
+Route::get('add-cart/{id}', [CartController::class, 'addCart'])->name('add.cart');
 
 
 
